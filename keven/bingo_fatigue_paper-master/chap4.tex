@@ -1,0 +1,11 @@
+%%% -*-LaTeX-*-
+
+\chapter{Conclusion}\label{conclusion}
+
+A surrogate model for crack growth through a weld is obtained using symbolic regression. The surrogate model inputs are: crack geometry, crack orientation, and growth angle. The data was collected from 180 different boundary condition configurations of a model. For each boundary condition configuration, a crack is grown in the model through the weld in the least conservative location and orientation. 
+
+The resulting surrogate model is a symbolic equation from which we can interpret the effect of each input variable on the prediction of stress intensity factors. The final model is a summation of multiple equations that resulted from using a gradient boosting technique. It has been shown that the application of gradient boosting in symbolic regression can yield models with lower error without over-fitting to the training data. 
+
+We were unable to find a surrogate model to map the stresses in the shell element line welds to the maximum principal stress and the direction of the maximum principal stress. That is left for continuation of the model development. Finding the maximum principal stress from the local line weld stresses will allow the prediction of crack growth using only information gained from shell element simulations. With the current model, assumptions must be made about the stress and crack orientation in order to make a SIF prediction.
+
+Other future work that this project may include is the use of symbolic regression for a more simple, general case. The lessons learned from using symbolic regression on a complicated geometry could be very beneficial to finding a surrogate model for a simple welded plate for example. Other future work may result in different inputs to include in the model that may improve the performance of the models. 

@@ -1,0 +1,16 @@
+%%% -*-LaTeX-*-
+%%% This is the abstract for the thesis.
+%%% It is included in the top-level LaTeX file with
+%%%
+%%%    \preface    {abstract} {Abstract}
+%%%
+%%% The first argument is the basename of this file, and the
+%%% second is the title for this page, which is thus not
+%%% included here.
+%%%
+%%% The text of this file should be about 350 words or less.
+
+Fatigue cracks can be successfully modeled with three-dimensional finite-element (FE) models using FRANC3D. These models are useful in calculating stress intensity factor (SIF) histories that subsequently can be used to integrate crack-growth rate relations and predict the fatigue life of a part. However, when modeling thin structures, it is often computationally desirable to use shell elements. Shell element models can include line-weld elements representing welds connecting the edge of a surface to the face of another surface. The line-weld is modeled with one-dimensional elements that can transmit both translational and rotational forces. Cracks cannot be explicitly modeled in these one-dimensional elements, so we seek alternate methods to simulate fatigue damage in the welds. 
+
+In this work, a surrogate model that relates the translational and rotational loads in the line-weld elements of a C-channel welded to a plate to corresponding SIFs is created with symbolic regression, using the open-source code, Bingo. To train the surrogate model, continuum FE calculations of a typical plate-channel welded connection were conducted for a suite of loading combinations to develop SIF history relationships. Similarly, for the same nominal geometric arrangement and loading conditions, shell and line-weld FE calculations were used to determine the corresponding translational and rotational forces. The resulting model is an interpretable, closed-form, mathematical model that can be used to map the line-weld forces to SIF history and, thus, predict fatigue life. 
+
