@@ -1,7 +1,7 @@
 from sympy import Symbol, integrate, init_printing, diff, simplify, Matrix, print_latex, sqrt, cos, sin
 import matplotlib.pyplot as plt
 import numpy as np
-from Raju_Newman_new import F_s, F_s_bingo
+from Raju_Newman_new import F_s, F_s_bingo, Bingo_cust
 from sort_data import sort
 import pandas as pd
 
@@ -17,14 +17,22 @@ def plot_eqns(n, models):
     plt.ylabel('F')
     return
 
-X_0 = Symbol('a/c')
-X_1 = Symbol('a/t')
-X_2 = Symbol('c/b')
-X_3 = Symbol('phi')
+X_0 = Symbol('a')
+X_1 = Symbol('b')
+X_2 = Symbol('c')
+X_3 = Symbol('d')
+
+# Current best
+#
 g_u1 = simplify((1.0263496149498648 + sin(6373.023412385456 + 11071.131423790328 + -11350.186594670391 - (6373.023412385456 - (sin(X_3)))))*(X_1) + cos(11071.131423790328))
 g_o1 = simplify(1 + (0.1+0.35*((X_0**(-1)))*(X_1)**2)*(1-(sin(X_3)))**2)
 M_o1 = simplify((X_0)*(0.2965415493436768) - (-0.02115042312837423) + (sqrt(X_1))*((sqrt(1/X_0))*(0.2502798692342405 + 0.2502798692342405) - (0.3628181028391626)) + (sqrt(sqrt(1/X_0)))*(0.6637021883924064))
 M_u1 = simplify(1.0052643174132263 - ((X_1)*((X_0 + -5.897146261824969)*(X_0) - ((-8.41374265030078)*(sqrt(X_0)) + 3.65713751815375))))
+#
+#
+
+test = simplify(sqrt((-0.5044446965737382 - ((X_1 + 0.7800912380773746 - (X_0) + 0.7800912380773746 - (X_0))*(0.7800912380773746 - (X_0) + 0.7800912380773746 - (X_0))))*(X_1) - (1.0134709757655205)))
+test = simplify(0.36102531325878995 - ((-0.011405379752873106 + (-0.025281383165265438)*(X_0))*(X_1)) + ((-0.025281383165265438)*(X_0))*(-27.928204100027248))
 
 df = pd.read_csv('data_for_bingo4.csv')
 F3d_data = df[['a_c','a_t','c_b','phi','F']].values

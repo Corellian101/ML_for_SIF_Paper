@@ -70,6 +70,33 @@ def F_s_bingo(a_c,a_t,c_b,phi):
         F_s_bingo[i] = Fs
     return F_s_bingo
 
+def Bingo_cust(a_c, a_t, c_b, phi, Mu1, gu1, Mo1, go1):
+    a_c = np.array(a_c)
+    a_t = np.array(a_t)
+    c_b = np.array(c_b)
+    phi = np.array(phi)
+    F_s_bingo = np.zeros(len(a_c))
+    for i in range(len(a_c)):
+        X_0 = a_c[i]
+        X_1 = a_t[i]
+        X_2 = c_b[i]
+        X_3 = phi[i]
+        if X_0 <= 1:
+            fphi = ((X_0)**2*(np.cos(X_3))**2+(np.sin(X_3))**2)**(1/4)
+            fw = np.cos((np.pi/2)*(X_2)*np.sqrt(X_1))**(-0.5)
+            g = gu1(X_0, X_1, X_2, X_3)
+            #g = 0.987 - X_1*(-1.026 + np.sin(279 - np.sin(X_3)))
+            M = Mu1(X_0, X_1, X_2, X_3)
+            #M = -X_1*(8.41374265030078*np.sqrt(X_0) + X_0*(X_0 - 5.89714626182497) - 3.65713751815375) + 1.00526431741323
+        if X_0 > 1:
+            fphi = ((((X_0**(-1)))**2)*np.sin(X_3)**(2)+np.cos(X_3)**(2))**(1/4)
+            fw = np.cos((np.pi/2)*(X_2)*np.sqrt(X_1))**(-0.5)
+            g = go1(X_0, X_1, X_2, X_3)
+            M = Mo1(X_0, X_1, X_2, X_3)
+        Fs = M*g*fw*fphi
+        F_s_bingo[i] = Fs
+    return F_s_bingo
+
 def M(a_c,a_t,phi):
     M1 = []
     M2 = []
