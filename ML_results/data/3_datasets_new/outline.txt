@@ -1,0 +1,11 @@
+1. split up a/c into a/c <=1 and a/c > 1
+	a. solve at phi = pi/2 to remove phi dependence as g goes to 1 for dataset3 use FULL
+		i. solve for m
+		ii. divide mg by m and solve for g
+			iia. solve for g on PHI SAMPLE
+			iib. solve for g FULL 
+	b. solve without splitting m and g 
+		i. solve with PHI SAMPLE
+		ii. solve with FULL
+
+2. train on datset 1,2,3 for all values of a/c at once FULL and PHI SAMPLE
