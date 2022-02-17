@@ -18,6 +18,19 @@ def sort(data):
 
     return models 
 
+def sort2(data):
+    models = []
+    model = np.unique(data[:,[0,1]], axis=0)
+    
+    for i in model:
+        models.append(data[np.where((data[:,[0,1]] == i).all(axis=1))])
+
+    return models 
+
+def remove_cb(data):
+    return data[np.where(data[:,2] == 0.2)[0],:]
+        
+
 #data = df[['a_c', 'a_t', 'c_b','phi','F']].values
 #models = sort(data)
     
