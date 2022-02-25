@@ -41,6 +41,11 @@ def find_nearest(array, value):
     idx = (np.abs(array - value)).argmin()
     return array[idx]
 
+def find_nearest_idx(array, value):
+    array = np.asarray(array)
+    idx = (np.abs(array - value)).argmin()
+    return idx
+
 #phis = np.linspace(0,np.pi,10)
     
 #d1 = np.zeros(5)

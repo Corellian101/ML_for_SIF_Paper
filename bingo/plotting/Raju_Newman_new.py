@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from scipy.special import gamma, ellipk
 
 def split_ac(data, ac_greater_1):
     if ac_greater_1:
@@ -9,7 +10,53 @@ def split_ac(data, ac_greater_1):
         data = data[np.where(data[:,0] <= 1)[0]]   
     return data
 
+def get_idx(array):
+    idx_u1 = np.where(array <= 1)[0]
+    idx_o1 = np.where(array > 1)[0]
+    return idx_u1, idx_o1
+
+def E(a_c):
+    if a_c <= 1:
+        alpha = np.arccos(a_c)
+    elif a_c > 1:
+        alpha = np.arccos(a_c**(-1))
+    k = np.sin(alpha)
+    return ellipk(k)
+
+def Q(a_c):
+    e = E(a_c)
+    return e**2
+
+def smith(phi,a_c=1):
+    # a/c = 1
+    Ft = 1.211 - 0.186*np.sqrt(np.sin(phi))
+    K = Ft*2/np.pi*np.sqrt(np.pi)
+    Q = 2.464
+    F = K/(np.sqrt(np.pi/Q))
+    fphi = Fphi(a_c, phi)
+    return F*fphi
+
+def internal_ellipse(a_c, phi):
+    F = Fphi(a_c, phi)
+    return F
+
+def Paris(a_c, a_t, phi = np.pi/2):
+    f1 = (1 + 0.1215*(1-a_c))
+    f2 = np.sqrt(2/np.pi*a_t**(-1)*np.tan(np.pi/2*a_t))
+    fphi = Fphi(a_c, phi)
+    return f1*f2*fphi
+
+    
+
 def F_s(a_c_,a_t_,c_b_,phi_,only_mg=False, ac_over_1 = None):
+    try:
+        len(a_c_)
+    except:
+        a_c_ = [a_c_]
+        a_t_ = [a_t_]
+        c_b_ = [c_b_]
+        phi_ = [phi_]
+        
     a_c_ = np.array(a_c_)
     a_t_ = np.array(a_t_)
     c_b_ = np.array(c_b_)
@@ -135,9 +182,18 @@ def M(a_c,a_t,phi):
     
     return M1, M2, M3
 
+
+
 def Fw(c_b, a_t):
     fw = np.cos((np.pi/2)*(c_b)*np.sqrt(a_t))**(-0.5)
     return fw
+
+def Fphi(a_c, phi):
+    idx_u1, idx_o1 = get_idx(a_c)
+    fphi = np.zeros(np.shape(a_c))
+    fphi[idx_u1] = ((a_c[idx_u1])**2*(np.cos(phi[idx_u1]))**2+(np.sin(phi[idx_u1]))**2)**(1/4)
+    fphi[idx_o1] = ((((a_c[idx_o1]**(-1)))**2)*np.sin(phi[idx_o1])**(2)+np.cos(phi[idx_o1])**(2))**(1/4)
+    return fphi
 
 def Fphi_u1(a_c, phi):
     fphi = ((a_c)**2*(np.cos(phi))**2+(np.sin(phi))**2)**(1/4)
@@ -146,6 +202,21 @@ def Fphi_u1(a_c, phi):
 def Fphi_o1(a_c,phi):
     fphi = ((((a_c**(-1)))**2)*np.sin(phi)**(2)+np.cos(phi)**(2))**(1/4)
     return fphi
+
+def Fs_M(a_c,a_t,phi):
+    idx_u1, idx_o1 = get_idx(a_c)
+    M1 = np.zeros(np.shape(a_c))
+    M2 = np.zeros(np.shape(a_c))
+    M3 = np.zeros(np.shape(a_c))
+    
+    M1[idx_u1] = 1.13 - 0.09*(a_c[idx_u1])
+    M2[idx_u1] = -0.54 + (0.89/(0.2+(a_c[idx_u1])))
+    M3[idx_u1] = 0.5 - (1/(0.65+(a_c[idx_u1]))) + 14*(1-(a_c[idx_u1]))**(24)
+    
+    M1[idx_o1] = np.sqrt((a_c[idx_o1]**(-1)))*(1+0.04*((a_c[idx_o1]**(-1))))
+    M2[idx_o1] = 0.2*((a_c[idx_o1]**(-1)))**4
+    M3[idx_o1] = -0.11*((a_c[idx_o1]**(-1)))**4
+    return M1 + M2*a_t**2 + M3*a_t**4
 
 def Calc_Mg(data):
     ac = data[:,0]
