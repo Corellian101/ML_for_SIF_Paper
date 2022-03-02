@@ -3,7 +3,7 @@ from sympy.parsing.sympy_parser import parse_expr
 import matplotlib.pyplot as plt
 import numpy as np
 from Raju_Newman_new import *
-from sort_data import sort, find_nearest_idx
+from sort_data import sort, find_nearest_idx, remove_cb, find_nearest
 import pandas as pd
 from sklearn.metrics import mean_absolute_error
 
@@ -51,18 +51,31 @@ class Plotting:
         for i in range(len(models)):
             if (models[i][0,[0,1,2]] == [a_c, a_t, c_b]).all():
                 return i  
-        return 0
+        return None
 
     def plot_eqns(self, n=None, a_c=None, a_t=None, c_b = None):
         F_RN = self.F_RN
         F_bingo = self.F_bingo
         input_vars = self.input_vars
         F_input = self.F_input
+        print
 
         data = np.column_stack((input_vars, F_input, F_RN, F_bingo))
         models = sort(data)
+        
+        data = np.zeros(data.shape[1])
+        for m in models:
+            phis = np.linspace(0, np.pi, 20)
+            for ph in phis:
+                data = np.row_stack((data,m[np.where(m[:,3] == find_nearest(m[:,3],ph))[0][0]]))
+        data = data[1::]
+        models = sort(data)
+        
         if n == None:
-            n = a_c_to_n(models, a_c, a_t, c_b)
+            n = self.a_c_to_n(models, a_c, a_t, c_b)
+        if n == None:
+            plt.plot([1,1],[1,1])
+            return
         error_RN = abs(models[n][:,-3]-models[n][:,-2])/models[n][:,-3]
         error_bingo = abs(models[n][:,-3]-models[n][:,-1])/models[n][:,-3]
         
@@ -113,14 +126,22 @@ class Plotting:
         F_input = self.F_input_test
         F_RN = self.F_RN_test
         F_bingo = self.F_bingo_test
+        
+        # data = np.column_stack((self.input_vars_test, F_input, F_RN, F_bingo))
+        # data = remove_cb(data)
+        # F_input = data[:,-3]
+        # F_RN = data[:, -2]
+        # F_bingo = data[:, -1]
+ 
+        
         error_RN = abs(F_input-F_RN)/F_input
         error_bingo = abs(F_input-F_bingo)/F_input
         mae_RN = np.round(mean_absolute_error(F_input, F_RN), 4)
         mae_bingo = np.round(mean_absolute_error(F_input, F_bingo), 4)
         if not plot_only2:
             plt.figure()
-            plt.hist(error_bingo, color='g', label='bingo Error')
-            plt.hist(error_RN, color='b', label='RN Error')
+            plt.hist(error_bingo, color='g', alpha=0.5, label='bingo Error')
+            plt.hist(error_RN, color='b', alpha=0.5, label='RN Error')
             plt.title(f"RN mean error = {np.round(np.mean(error_RN), 4)}, bingo mean error = {np.round(np.mean(error_bingo), 4)} \n RN max error = {np.round(np.max(error_RN), 4)}, bingo max error = {np.round(np.max(error_bingo), 4)} \n RN mae = {mae_RN}, bingo mae = {mae_bingo}")
             plt.legend()
             
@@ -142,8 +163,11 @@ class Plotting:
     def get_data_sets(test=0):
         if not test:
             RN_data = pd.read_csv('1_RN_data.csv')[['a/c','a/t','c/b','phi','Mg','F']].values
-            RN_eqn = pd.read_csv('2_RN_eqn.csv')[['a/c','a/t','c/b','phi','Mg','F']].values
+            #RN_eqn = pd.read_csv('2_RN_eqn.csv')[['a/c','a/t','c/b','phi','Mg','F']].values
+            RN_eqn = pd.read_csv('Sorted_RN_eqn_data.csv')[['a/c','a/t','c/b','phi','Mg','F']].values
             F3d_data = pd.read_csv('3_FRANC3D_FULL.csv')[['a/c','a/t','c/b','phi','Mg', 'F']].values
+            
+            #F3d_data = pd.read_csv('bingo_data_sets/F3d_data_M_o1_cb.csv')[['a/c','a/t','c/b','phi','Mg', 'F']].values
         elif test:
             RN_data = pd.read_csv('1_RN_data_TEST.csv')[['a/c','a/t','c/b','phi','Mg','F']].values
             RN_eqn = pd.read_csv('2_RN_eqn_TEST.csv')[[' a/c','a/t','c/b','phi','Mg','F']].values
@@ -223,18 +247,20 @@ class RN_eqn_funs:
         from numpy import sqrt, cos, sin
         g = 0.9993 + (0.4085*X_1 + 0.2309)**2 * (1.0128 - sin(X_2))**2
         #g = 1 + (0.1 + 0.35*(X_1)**2)*(1-sin(X_2))**2
+        
+        ### TRIAL 2 ###
+        g = (X_1 + 0.645087)*((X_1 + 0.645087)*(0.14846353627*sin(X_2) - 0.297424128459432)*sin(X_2) + 0.347009) + 0.803747
         return g
     
     def Mo1(X_0, X_1, X_2=0, X_3=0):
         from numpy import sqrt, cos, sin
         X_0 = 1/X_0
         M = ((X_0)*(0.274624) - (59882531.611787) + 59882531.514921)*((-0.352740 + X_0)*(X_1 + -1.793803 + -0.352740 + X_0) - (-3.116885)) - (-0.604788)
-        #M = 0.274624*X_0**3 + 0.274624*X_1*X_0**2 - 0.783229*X_0**2 - 0.193737*X_1*X_0 + 1.306*X_0 + 0.0341685*X_1 + 0.229524
         
         ### TRIAL 2 ###
-        M = ((((sqrt(X_0) + -0.993416)*(X_0))*(-0.746112) - (0.119041))*(0.079181 - (X_1)) - (-1.058784))*(sqrt(X_0)) - (11811.573801) + 11811.545610
-        #M = ((X_0 - (0.241857))*(-0.245796 + ((-0.241857 + X_0)*(X_1))*(0.215774)) - (0.149835 + -1.056510))*(X_0) - (-0.299141)
-        #M = 0.612554 - (((X_0)*(0.985023) - (0.346824))*((((X_0)*(0.985023) - (0.346824))*(X_1 + -0.767345))*(-0.281420) + -0.842511 - (-0.062843)))
+        M = sqrt(X_0)*((X_1 - 0.079181)*(0.746112*X_0*(sqrt(X_0) - 0.993416) + 0.119041) + 1.058784) - 0.0281910000012431
+        ### STACK SIZE 30 ###
+        M = (0.10565*(X_1 + 0.360041)*(X_0**2*(0.720527*X_1 - 0.352391021998) + 0.105133) - 0.2631525974)*((X_0 - (X_1 + 0.360041)*(-0.720527*X_0**2*(X_1 - 0.489074) - 0.105133) - 2.490796)*(-X_0**2 + (X_1 + 0.360041)*(-0.720527*X_0**2*(X_1 - 0.489074) - 0.105133) - 4.581786) - 16.295681) - 1.036403
         return M
     
     def go1(X_0, X_1, X_3, X_2):
@@ -242,6 +268,10 @@ class RN_eqn_funs:
         g = 1 + (0.1+0.35*((X_0**(-1)))*(X_1)**2)*(1-(sin(X_2)))**2
         X_0 = 1/X_0
         #g = 0.999991 - (((8833227.041394 + (sin(X_2))*(1.999006) - (-1261496.774534) - ((sin(X_2))*(sin(X_2))) + -10094724.815343)*(X_1 + 0.222239))*(0.232156))
+        
+        ### TRIAL 2 ###
+        g =  ((((-0.973016)*(sin(X_2)) - (-0.973278))*(-0.608237))*(((-0.973016)*(sin(X_2)) - (-0.973278))*(-0.608237)))*((X_0)*((X_1)*(X_1)) + 0.425402 + -0.140293) - (-0.999990)
+        g = 0.35*(X_0*X_1**2 + 0.285109)*(sin(X_2) - 1)**2 + 1
         return g
 
 # F3d data
@@ -267,9 +297,14 @@ class F3d_data_funs:
     def gu1(X_0, X_1, X_2, X_3):
         X_2 = X_3
         from numpy import sqrt, cos, sin
+        #g = 1 + (0.1 + 0.35*(X_1)**2)*(1-sin(X_2))**2
         g = (1.0263496149498648 + sin(6373.023412385456 + 11071.131423790328 + -11350.186594670391 - (6373.023412385456 - (sin(X_3)))))*(X_1) + cos(11071.131423790328)
         g = -(-1.0263496149499*X_1 + X_1*sin(279.05517088006 - sin(X_3)) - 0.9873999518025)
-        #g = 1 + (0.1 + 0.35*(X_1)**2)*(1-sin(X_2))**2
+        
+        
+        ### TRIAL 2 ###
+        g = (((1.015248 - (sin(X_2)))*(-0.061607))*(-7.069833) + -5.222969 + (X_1)*(X_1) + 2.775947 - (-2.266952))*(((1.015248 - (sin(X_2)))*(-0.061607))*(-7.069833)) + sqrt(1.015248)
+        
         return g
     
     def Mo1(X_0, X_1, X_2=0, X_3=0):
@@ -287,21 +322,17 @@ class F3d_data_funs:
         M = 0.790029 - ((-0.585648 + X_0)*((0.156573)*(54911.261124 + X_0 - (28145.860335) + -26770.085597 + (-1.440581)*(X_1))))
         return M
     
-    def Mo12(X_0, X_1, X_2=0, X_3=0):
-        from numpy import sqrt, cos, sin
-        # original equation
-        X_0 = 1/X_0
-        M = (X_0)*(0.2965415493436768) - (-0.02115042312837423) + (sqrt(X_1))*((sqrt(X_0))*(0.2502798692342405 + 0.2502798692342405) - (0.3628181028391626)) + (sqrt(sqrt(X_0)))*(0.6637021883924064)
-        #M = (X_0 + -4.120056 + (X_1)*(-2.311179))*(((sqrt(X_1) + -3.330640)*(X_0))*(0.066869) + -217034054.103521 - (-217034054.146461)) - (-0.504788)
-        return M
-    
     def go1(X_0, X_1, X_2, X_3):
         from numpy import sqrt, cos, sin
         # opriginal equation used RN g
         X_2 = X_3
         X_0 = 1/X_0
         g = 1 + (0.1+0.35*((X_0))*(X_1)**2)*(1-(sin(X_3)))**2
-        g = 1.313275 + (cos(((0.770511)*(X_1) - ((0.336310)*(0.336310)))*(X_0) + -1.674651 - (sin(X_2)) + -0.577035))*(0.313262)
+        #g = 1.313275 + (cos(((0.770511)*(X_1) - ((0.336310)*(0.336310)))*(X_0) + -1.674651 - (sin(X_2)) + -0.577035))*(0.313262)
+        
+        ### TRAIL 2 ###
+        g = (118.696317 + sin((cos(X_1) + 1.306766 + sin(X_2))*(0.476230)) - (119.687454))*(-0.505565 - (X_0)) + 1.008365
+        #g = (sin(sin(X_2) + ((X_1)*(X_0 + 0.257186))*(-0.564576) + 0.758759))*(-54.537231 - (-54.224772)) + 1.312375
         return g
 
 
@@ -324,7 +355,13 @@ if __name__ == "__main__":
     X_3 = Symbol('X_3')
     #RN_data = Plotting("RN_data", 0)
     
+    model = Plotting("F3d_data", 1)
+    model.plot_eqns(a_c=2, a_t=0.8, c_b = 0.2)
+    model.error_plotting()
     
+    phi = np.linspace(0, np.pi, 100)
+    plt.figure()
+    plt.plot(phi, )
     RN_data, RN_eqn, F3d_data = Plotting.get_data_sets()
     # a_c = 0.2
     # test_smith_f3d = F3d_data[np.where((F3d_data[:,[0, 1, 2]] == [a_c, 0.2, 0.2]).all(axis=1))[0]]
@@ -341,5 +378,12 @@ if __name__ == "__main__":
     # plt.plot(test_smith_RN[:,3], test_smith_RN[:,-1], 'k^', label='RN data')
     # plt.plot(test_smith_f3d[:,3], F_paris, 'mo', label='Paris estimate')
     # plt.legend()
-
     
+#%%
+    test = sort(RN_eqn)
+    def plot(n):
+        plt.figure()
+        data = abs(np.insert(test[n][:,3], 0, 0) - np.append(test[n][:,3], 0))
+        plt.plot(test[n][:,3], data[1::])
+        plt.ylabel('spacing')
+        plt.xlabel('phi')

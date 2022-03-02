@@ -31,32 +31,35 @@ F3d_data = remove_cb(F3d_data)
 RN_eqn = remove_cb(RN_eqn)
 #RN_data = remove_cb(RN_data)
 
-# np.savetxt('./bingo_data_sets/F3d_data.csv', F3d_data, delimiter=',',header='a/c,a/t,c/b,phi,F,Mg',fmt='%10.5f', comments='')
-# np.savetxt('./bingo_data_sets/RN_eqn.csv', RN_eqn, delimiter=',',header='a/c,a/t,c/b,phi,F,Mg',fmt='%10.5f', comments='')
-# np.savetxt('./bingo_data_sets/RN_data.csv', RN_data, delimiter=',',header='a/c,a/t,c/b,phi,F,Mg',fmt='%10.5f', comments='')
+np.savetxt('./bingo_data_sets/F3d_data.csv', F3d_data, delimiter=',',header='a/c,a/t,c/b,phi,F,Mg',fmt='%10.5f', comments='')
+np.savetxt('./bingo_data_sets/RN_eqn.csv', RN_eqn, delimiter=',',header='a/c,a/t,c/b,phi,F,Mg',fmt='%10.5f', comments='')
+np.savetxt('./bingo_data_sets/RN_data.csv', RN_data, delimiter=',',header='a/c,a/t,c/b,phi,F,Mg',fmt='%10.5f', comments='')
 
 
 RN_data_M_u1 = create_M_input(RN_data, ac_greater_1=False)
 RN_data_M_o1 = create_M_input(RN_data, ac_greater_1=True)
 RN_data_M_o1[:,0] = 1/RN_data_M_o1[:,0]
-RN_data_on_RN_eqn = np.column_stack((RN_data_M_u1, F_s(*RN_data_M_u1[:,0:4].T)))
-# np.savetxt('./bingo_data_sets/RN_data_M_u1.csv', RN_data_M_u1, delimiter=',',header='a/c,a/t,c/b,phi,F,Mg',fmt='%10.5f', comments='')
-# np.savetxt('./bingo_data_sets/RN_data_M_o1.csv', RN_data_M_o1, delimiter=',',header='a/c,a/t,c/b,phi,F,Mg',fmt='%10.5f', comments='')
-np.savetxt('./bingo_data_sets/RN_data_on_RN_eqn.csv', RN_data_on_RN_eqn, delimiter=',',header='a/c,a/t,c/b,phi,F,Mg',fmt='%10.5f', comments='')
+
+
+np.savetxt('./bingo_data_sets/RN_data_M_u1_cb.csv', RN_data_M_u1, delimiter=',',header='a/c,a/t,c/b,phi,F,Mg',fmt='%10.5f', comments='')
+np.savetxt('./bingo_data_sets/RN_data_M_o1_cb.csv', RN_data_M_o1, delimiter=',',header='a/c,a/t,c/b,phi,F,Mg',fmt='%10.5f', comments='')
 
 RN_eqn_M_u1 = create_M_input(RN_eqn, ac_greater_1=False)
 RN_eqn_M_o1 = create_M_input(RN_eqn, ac_greater_1=True)
 RN_eqn_M_o1[:,0] = 1/RN_eqn_M_o1[:,0]
-# np.savetxt('./bingo_data_sets/RN_eqn_M_u1.csv', RN_eqn_M_u1, delimiter=',',header='a/c,a/t,c/b,phi,F,Mg',fmt='%10.5f', comments='')
-# np.savetxt('./bingo_data_sets/RN_eqn_M_o1.csv', RN_eqn_M_o1, delimiter=',',header='a/c,a/t,c/b,phi,F,Mg',fmt='%10.5f', comments='')
+np.savetxt('./bingo_data_sets/RN_eqn_M_u1_cb.csv', RN_eqn_M_u1, delimiter=',',header='a/c,a/t,c/b,phi,F,Mg',fmt='%10.5f', comments='')
+np.savetxt('./bingo_data_sets/RN_eqn_M_o1_cb.csv', RN_eqn_M_o1, delimiter=',',header='a/c,a/t,c/b,phi,F,Mg',fmt='%10.5f', comments='')
+
 
 F3d_data_M_u1 = create_M_input(F3d_data, ac_greater_1=False)
 F3d_data_M_o1 = create_M_input(F3d_data, ac_greater_1=True)
+
 F3d_data_M_o1[:,0] = 1/F3d_data_M_o1[:,0]
-# np.savetxt('./bingo_data_sets/F3d_data_M_u1.csv', F3d_data_M_u1, delimiter=',',header='a/c,a/t,c/b,phi,F,Mg',fmt='%10.5f', comments='')
-# np.savetxt('./bingo_data_sets/F3d_data_M_o1.csv', F3d_data_M_o1, delimiter=',',header='a/c,a/t,c/b,phi,F,Mg',fmt='%10.5f', comments='')
+np.savetxt('./bingo_data_sets/F3d_data_M_u1_cb.csv', F3d_data_M_u1, delimiter=',',header='a/c,a/t,c/b,phi,F,Mg,Mgw',fmt='%10.5f', comments='')
+np.savetxt('./bingo_data_sets/F3d_data_M_o1_cb.csv', F3d_data_M_o1, delimiter=',',header='a/c,a/t,c/b,phi,F,Mg,Mgw',fmt='%10.5f', comments='')
 
-
+RN_data_on_RN_eqn = np.column_stack((RN_data_M_u1, F_s(*RN_data_M_u1[:,0:4].T)))
+# np.savetxt('./bingo_data_sets/RN_data_on_RN_eqn.csv', RN_data_on_RN_eqn, delimiter=',',header='a/c,a/t,c/b,phi,F,Mg',fmt='%10.5f', comments='')                   
 
 
 
