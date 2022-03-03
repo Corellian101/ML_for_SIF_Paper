@@ -1,12 +1,27 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-def F_s(a_c_,a_t_,c_b_,phi_,only_mg=False):
+def split_ac(data, ac_greater_1):
+    if ac_greater_1:
+        data = data[np.where(data[:,0] > 1)[0]]
+        #data[:,0] = 1/data[:,0]
+    else:
+        data = data[np.where(data[:,0] <= 1)[0]]   
+    return data
+
+def F_s(a_c_,a_t_,c_b_,phi_,only_mg=False, ac_over_1 = None):
     a_c_ = np.array(a_c_)
     a_t_ = np.array(a_t_)
     c_b_ = np.array(c_b_)
     phi_ = np.array(phi_)
 
+    # if ac_over_1 != None:
+    #     data = split_ac(np.column_stack((a_c_,a_t_,c_b_,phi_)), ac_over_1)
+    #     a_c_ = data[:, 0]
+    #     a_t_ = data[:, 1]
+    #     c_b_ = data[:, 2]
+    #     phi_ = data[:, 3]
+    
     try:
         F_s = np.zeros(len(a_c_))
         iters = len(a_c_)
@@ -70,11 +85,15 @@ def F_s_bingo(a_c,a_t,c_b,phi):
         F_s_bingo[i] = Fs
     return F_s_bingo
 
-def Bingo_cust(a_c, a_t, c_b, phi, Mu1, gu1, Mo1, go1):
-    a_c = np.array(a_c)
-    a_t = np.array(a_t)
-    c_b = np.array(c_b)
-    phi = np.array(phi)
+def Bingo_cust(inputs, Mu1=None, gu1=None, Mo1=None, go1=None, ac_over_1=None):
+    
+    # if ac_over_1 != None:
+    #     inputs = split_ac(inputs, ac_over_1)
+    
+    a_c = inputs[:, 0]
+    a_t = inputs[:, 1]
+    c_b = inputs[:, 2]
+    phi = inputs[:, 3]
     F_s_bingo = np.zeros(len(a_c))
     for i in range(len(a_c)):
         X_0 = a_c[i]
@@ -85,9 +104,7 @@ def Bingo_cust(a_c, a_t, c_b, phi, Mu1, gu1, Mo1, go1):
             fphi = ((X_0)**2*(np.cos(X_3))**2+(np.sin(X_3))**2)**(1/4)
             fw = np.cos((np.pi/2)*(X_2)*np.sqrt(X_1))**(-0.5)
             g = gu1(X_0, X_1, X_2, X_3)
-            #g = 0.987 - X_1*(-1.026 + np.sin(279 - np.sin(X_3)))
             M = Mu1(X_0, X_1, X_2, X_3)
-            #M = -X_1*(8.41374265030078*np.sqrt(X_0) + X_0*(X_0 - 5.89714626182497) - 3.65713751815375) + 1.00526431741323
         if X_0 > 1:
             fphi = ((((X_0**(-1)))**2)*np.sin(X_3)**(2)+np.cos(X_3)**(2))**(1/4)
             fw = np.cos((np.pi/2)*(X_2)*np.sqrt(X_1))**(-0.5)
@@ -102,13 +119,13 @@ def M(a_c,a_t,phi):
     M2 = []
     M3 = []      
     for i in range(len(a_c)):
-        if a_c <= 1:
+        if a_c[i] <= 1:
             M1.append(1.13 - 0.09*(a_c[i]))
             M2.append(-0.54 + (0.89/(0.2+(a_c[i]))))
             M3.append(0.5 - (1/(0.65+(a_c[i]))) + 14*(1-(a_c[i]))**(24))
     
     
-        if a_c > 1:
+        if a_c[i] > 1:
             M1.append(np.sqrt((a_c[i]**(-1)))*(1+0.04*((a_c[i]**(-1)))))
             M2.append(0.2*((a_c[i]**(-1)))**4)
             M3.append(-0.11*((a_c[i]**(-1)))**4)
@@ -117,6 +134,35 @@ def M(a_c,a_t,phi):
     M3 = np.array(M3)
     
     return M1, M2, M3
+
+def Fw(c_b, a_t):
+    fw = np.cos((np.pi/2)*(c_b)*np.sqrt(a_t))**(-0.5)
+    return fw
+
+def Fphi_u1(a_c, phi):
+    fphi = ((a_c)**2*(np.cos(phi))**2+(np.sin(phi))**2)**(1/4)
+    return fphi
+
+def Fphi_o1(a_c,phi):
+    fphi = ((((a_c**(-1)))**2)*np.sin(phi)**(2)+np.cos(phi)**(2))**(1/4)
+    return fphi
+
+def Calc_Mg(data):
+    ac = data[:,0]
+    at = data[:,1]
+    cb = data[:,2]
+    phi = data[:,3]
+    F = data[:,4]
+    
+    Mg = np.zeros(len(ac))
+    for i in range(len(ac)):
+        fw = Fw(cb[i], at[i])
+        if ac[i] <= 1:
+            fphi = Fphi_u1(ac[i], phi[i])
+        else:
+            fphi = Fphi_o1(ac[i], phi[i])
+        Mg[i] = F[i]/(fw*fphi)
+    return Mg
 
     
 
