@@ -115,7 +115,7 @@ def execute_generational_steps(model):
         print(np.shape(y))
         print(np.mean(y))
         print(max(y))
-        stop
+        #stop
         x, x_test, y, y_test = train_test_split(x, y, test_size=0.2, random_state=42)
         # if only doing gradient boosting
         if model is not None:

@@ -28,7 +28,7 @@ from bingo.evolutionary_algorithms.deterministic_crowding import DeterministicCr
 from bingo.evolutionary_optimizers.island import Island
 
 POP_SIZE = 150
-STACK_SIZE = 64
+STACK_SIZE = 20
 MAX_GENERATIONS = 800000
 FITNESS_THRESHOLD = 1e-10
 CHECK_FREQUENCY = 1000
@@ -107,9 +107,6 @@ def execute_generational_steps(model):
         y = data[:,-1]
 
         print(y)
-        print()
-        print(x)
-        print()
         print(np.shape(x))
         print(np.shape(y))
         print(np.mean(y))
@@ -147,17 +144,10 @@ def execute_generational_steps(model):
     agraph_generator = AGraphGenerator(STACK_SIZE, component_generator, use_simplification=False)
 
     fitness = ExplicitRegression(training_data=training_data, metric='rmse', relative=True)
-
-    lo_options={'disp':False,
-             'xatol':1e-6,
-             'fatol':1e-6,
-             'maxfev':1000,
-             'maxiter':1000,
-             'adaptive':True}
-    local_opt_fitness = ContinuousLocalOptimization(
-             fitness, algorithm='Nelder-Mead', options=lo_options,
-             tolerance=1e-10)
-
+    local_opt_fitness = ContinuousLocalOptimization(fitness, algorithm='lm')
+    local_opt_fitness.optimization_options = {'options':{'xtol':1e-16, 'ftol':1e-16,
+                                                         'eps':0., 'gtol':1e-16,
+                                                         'maxiter':15000}}
     evaluator = Evaluation(local_opt_fitness)
 
 
@@ -186,6 +176,9 @@ def execute_generational_steps(model):
 
 def main(model):
     execute_generational_steps(model)
+    #logging.basicConfig(filename=f"{log_file}_{rank}.log",
+    #                    filemode="a", level=logging.DEBUG)
+
 
 if __name__ == '__main__':
     print('starting')

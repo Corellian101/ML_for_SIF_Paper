@@ -1,0 +1,4 @@
+checkpoint = ../checkpoint__162000.pkl
+model = 0
+data file = ../../../data_sets/F3d_data.csv
+a/c greater than 1 = 0
