@@ -63,13 +63,13 @@ class Plotting:
         data = np.column_stack((input_vars, F_input, F_RN, F_bingo))
         models = sort(data)
         
-        data = np.zeros(data.shape[1])
-        for m in models:
-            phis = np.linspace(0, np.pi, 20)
-            for ph in phis:
-                data = np.row_stack((data,m[np.where(m[:,3] == find_nearest(m[:,3],ph))[0][0]]))
-        data = data[1::]
-        models = sort(data)
+        # data = np.zeros(data.shape[1])
+        # for m in models:
+        #     phis = np.linspace(0, np.pi, 20)
+        #     for ph in phis:
+        #         data = np.row_stack((data,m[np.where(m[:,3] == find_nearest(m[:,3],ph))[0][0]]))
+        # data = data[1::]
+        # models = sort(data)
         
         if n == None:
             n = self.a_c_to_n(models, a_c, a_t, c_b)
@@ -210,6 +210,10 @@ class RN_data_funs:
         from numpy import sqrt, cos, sin
         g = (((sin(X_2) - (1.055261))*(X_1))*(-0.000110))*(4741.340369) + (0.114983)*(X_0) + 0.89453125
         #g =-53602933519417.929688 + (-0.054486 + ((0.896710)*(sin(X_2 + 3722.785157)) - (-0.984231))*(X_0))*(X_1 + -0.213224) - (-53602933519418.929688)
+        
+        ### TRIAL 2 ###
+        g = cos((2.530161 + (((X_1)*(X_1))*(0.590023) + 0.437161)*(sin(X_2)) - ((X_1)*(X_1)))*(1.088869)) - (-2.000031)
+        g = sin((-113.797854 + 114.873353)*((X_1 - (sin(X_2) + -0.055521))*(X_1) + -1.194459) + (0.140811)*(X_0)) + 1.983730
         return g
     
     def Mo1(X_0, X_1, X_2=0, X_3=0):
@@ -355,14 +359,14 @@ if __name__ == "__main__":
     X_3 = Symbol('X_3')
     #RN_data = Plotting("RN_data", 0)
     
-    model = Plotting("F3d_data", 1)
-    model.plot_eqns(a_c=2, a_t=0.8, c_b = 0.2)
+    model = Plotting("RN_data", 0)
+    #model.plot_eqns(a_c=2, a_t=0.8, c_b = 0.2)
     model.error_plotting()
     
-    phi = np.linspace(0, np.pi, 100)
-    plt.figure()
-    plt.plot(phi, )
-    RN_data, RN_eqn, F3d_data = Plotting.get_data_sets()
+    # phi = np.linspace(0, np.pi, 100)
+    # plt.figure()
+    # plt.plot(phi, )
+    # RN_data, RN_eqn, F3d_data = Plotting.get_data_sets()
     # a_c = 0.2
     # test_smith_f3d = F3d_data[np.where((F3d_data[:,[0, 1, 2]] == [a_c, 0.2, 0.2]).all(axis=1))[0]]
     # test_smith_RN = RN_data[np.where((RN_data[:,[0, 1, 2]] == [a_c, 0.2, 0.2]).all(axis=1))[0]]
@@ -380,10 +384,3 @@ if __name__ == "__main__":
     # plt.legend()
     
 #%%
-    test = sort(RN_eqn)
-    def plot(n):
-        plt.figure()
-        data = abs(np.insert(test[n][:,3], 0, 0) - np.append(test[n][:,3], 0))
-        plt.plot(test[n][:,3], data[1::])
-        plt.ylabel('spacing')
-        plt.xlabel('phi')
