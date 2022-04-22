@@ -1,0 +1,4 @@
+checkpoint = checkpoint__273000.pkl
+model = 0
+data file = 3_FRANC3D_FULL.csv
+a/c greater than 1 = 1

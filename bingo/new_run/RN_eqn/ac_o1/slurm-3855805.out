@@ -1,0 +1,607 @@
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the standard locale ("C").
+starting
+done
+[0.99348 0.99348 0.99348 0.99348 0.99348 0.99982 0.99982 0.99982 0.99982
+ 0.99982 1.00807 1.00807 1.00807 1.00807 1.00807 1.01759 1.01759 1.01759
+ 1.01759 1.01759 1.02757 1.02757 1.02757 1.02757 1.02757 1.03703 1.03703
+ 1.03703 1.03703 1.03703 1.04479 1.04479 1.04479 1.04479 1.04479 0.94707
+ 0.94707 0.94707 0.94707 0.94707 0.95155 0.95155 0.95155 0.95155 0.95155
+ 0.95737 0.95737 0.95737 0.95737 0.9641  0.9641  0.9641  0.9641  0.9641
+ 0.97115 0.97115 0.97115 0.97115 0.97115 0.97782 0.97782 0.97782 0.97782
+ 0.97782 0.9833  0.9833  0.9833  0.9833  0.9833  0.90678 0.90678 0.90678
+ 0.90678 0.90678 0.91003 0.91003 0.91003 0.91003 0.91003 0.91426 0.91426
+ 0.91426 0.91426 0.91426 0.91914 0.91914 0.91914 0.91914 0.91914 0.92426
+ 0.92426 0.92426 0.92426 0.92426 0.92911 0.92911 0.92911 0.92911 0.92911
+ 0.93309 0.93309 0.93309 0.93309 0.93309 0.87134 0.87134 0.87134 0.87134
+ 0.87134 0.87376 0.87376 0.87376 0.87376 0.87376 0.8769  0.8769  0.8769
+ 0.8769  0.8769  0.88053 0.88053 0.88053 0.88053 0.88053 0.88433 0.88433
+ 0.88433 0.88433 0.88433 0.88794 0.88794 0.88794 0.88794 0.88794 0.89089
+ 0.89089 0.89089 0.89089 0.89089 0.83982 0.83982 0.83982 0.83982 0.83982
+ 0.84165 0.84165 0.84165 0.84165 0.84165 0.84403 0.84403 0.84403 0.84403
+ 0.84403 0.84679 0.84679 0.84679 0.84679 0.84679 0.84968 0.84968 0.84968
+ 0.84968 0.84968 0.85241 0.85241 0.85241 0.85241 0.85241 0.85465 0.85465
+ 0.85465 0.85465 0.85465 0.81153 0.81153 0.81153 0.81153 0.81153 0.81294
+ 0.81294 0.81294 0.81294 0.81294 0.81479 0.81479 0.81479 0.81479 0.81479
+ 0.81691 0.81691 0.81691 0.81691 0.81691 0.81914 0.81914 0.81914 0.81914
+ 0.81914 0.82126 0.82126 0.82126 0.82126 0.82126 0.82299 0.82299 0.82299
+ 0.82299 0.78595 0.78595 0.78595 0.78595 0.78706 0.78706 0.78706 0.78706
+ 0.78706 0.78851 0.78851 0.78851 0.78851 0.78851 0.79017 0.79017 0.79017
+ 0.79017 0.79017 0.79192 0.79192 0.79192 0.79192 0.79192 0.79358 0.79358
+ 0.79358 0.79358 0.79358 0.79494 0.79494 0.79494 0.79494 0.76266 0.76266
+ 0.76266 0.76266 0.76266 0.76355 0.76355 0.76355 0.76355 0.76355 0.7647
+ 0.7647  0.7647  0.7647  0.7647  0.76603 0.76603 0.76603 0.76603 0.76603
+ 0.76742 0.76742 0.76742 0.76742 0.76742 0.76874 0.76874 0.76874 0.76874
+ 0.76874 0.76982 0.76982 0.76982 0.76982 0.74135 0.74135 0.74135 0.74135
+ 0.74135 0.74206 0.74206 0.74206 0.74206 0.74206 0.74299 0.74299 0.74299
+ 0.74299 0.74299 0.74406 0.74406 0.74406 0.74406 0.74518 0.74518 0.74518
+ 0.74518 0.74518 0.74624 0.74624 0.74624 0.74624 0.74624 0.74711 0.74711
+ 0.74711 0.74711 0.72174 0.72174 0.72174 0.72174 0.72232 0.72232 0.72232
+ 0.72232 0.72232 0.72307 0.72307 0.72307 0.72307 0.72307 0.72394 0.72394
+ 0.72394 0.72394 0.72394 0.72486 0.72486 0.72486 0.72486 0.72486 0.72572
+ 0.72572 0.72572 0.72572 0.72572 0.72643 0.72643 0.72643 0.72643]
+(341, 2)
+(341,)
+0.8488225513196481
+1.04479
+/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/evaluation/fitness_function.py:19: RuntimeWarning: overflow encountered in square
+  return np.sqrt(np.mean(np.square(vector)))
+Traceback (most recent call last):
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/uufs/chpc.utah.edu/common/home/u6019587/.venv/bingovenv_v2/lib/python3.7/site-packages/mpi4py/__main__.py", line 7, in <module>
+    main()
+  File "/uufs/chpc.utah.edu/common/home/u6019587/.venv/bingovenv_v2/lib/python3.7/site-packages/mpi4py/run.py", line 196, in main
+    run_command_line(args)
+  File "/uufs/chpc.utah.edu/common/home/u6019587/.venv/bingovenv_v2/lib/python3.7/site-packages/mpi4py/run.py", line 47, in run_command_line
+    run_path(sys.argv[0], run_name='__main__')
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 263, in run_path
+    pkg_name=pkg_name, script_name=fname)
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 96, in _run_module_code
+    mod_name, mod_spec, pkg_name, script_name)
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "bingo_evolution.py", line 200, in <module>
+    main(model)
+  File "bingo_evolution.py", line 179, in main
+    execute_generational_steps(model)
+  File "bingo_evolution.py", line 166, in execute_generational_steps
+    checkpoint_base_name='checkpoint_', num_checkpoints=5,stagnation_generations=STAGNATION)
+  File "/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/util/argument_validation.py", line 84, in do_validation
+    return func(*pargs, **kwargs)
+  File "/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/evolutionary_optimizers/evolutionary_optimizer.py", line 143, in evolve_until_convergence
+    self._update_checkpoints(checkpoint_base_name, num_checkpoints)
+  File "/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/evolutionary_optimizers/evolutionary_optimizer.py", line 200, in _update_checkpoints
+    self._remove_stale_checkpoint()
+  File "/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/evolutionary_optimizers/parallel_archipelago.py", line 276, in _remove_stale_checkpoint
+    os.remove(self._previous_checkpoints.pop(0))
+FileNotFoundError: [Errno 2] No such file or directory: 'checkpoint__0.pkl'
+application called MPI_Abort(MPI_COMM_WORLD, 1) - process 0
+[unset]: write_line error; fd=-1 buf=:cmd=abort exitcode=1
+:
+system msg for write_line failure : Bad file descriptor
+srun: error: notch272: task 1: Exited with exit code 1
+/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/evaluation/fitness_function.py:19: RuntimeWarning: overflow encountered in square
+  return np.sqrt(np.mean(np.square(vector)))
+/uufs/chpc.utah.edu/common/home/u6019587/.venv/bingovenv_v2/lib/python3.7/site-packages/numpy/core/_methods.py:178: RuntimeWarning: overflow encountered in reduce
+  ret = umr_sum(arr, axis, dtype, out, keepdims, where=where)
+/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/symbolic_regression/explicit_regression.py:57: RuntimeWarning: overflow encountered in true_divide
+  return (error / self.training_data.y).flatten()
+Traceback (most recent call last):
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/uufs/chpc.utah.edu/common/home/u6019587/.venv/bingovenv_v2/lib/python3.7/site-packages/mpi4py/__main__.py", line 7, in <module>
+    main()
+  File "/uufs/chpc.utah.edu/common/home/u6019587/.venv/bingovenv_v2/lib/python3.7/site-packages/mpi4py/run.py", line 196, in main
+    run_command_line(args)
+  File "/uufs/chpc.utah.edu/common/home/u6019587/.venv/bingovenv_v2/lib/python3.7/site-packages/mpi4py/run.py", line 47, in run_command_line
+    run_path(sys.argv[0], run_name='__main__')
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 263, in run_path
+    pkg_name=pkg_name, script_name=fname)
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 96, in _run_module_code
+    mod_name, mod_spec, pkg_name, script_name)
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "bingo_evolution.py", line 200, in <module>
+    main(model)
+  File "bingo_evolution.py", line 179, in main
+    execute_generational_steps(model)
+  File "bingo_evolution.py", line 166, in execute_generational_steps
+    checkpoint_base_name='checkpoint_', num_checkpoints=5,stagnation_generations=STAGNATION)
+  File "/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/util/argument_validation.py", line 84, in do_validation
+    return func(*pargs, **kwargs)
+  File "/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/evolutionary_optimizers/evolutionary_optimizer.py", line 143, in evolve_until_convergence
+    self._update_checkpoints(checkpoint_base_name, num_checkpoints)
+  File "/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/evolutionary_optimizers/evolutionary_optimizer.py", line 200, in _update_checkpoints
+    self._remove_stale_checkpoint()
+  File "/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/evolutionary_optimizers/parallel_archipelago.py", line 276, in _remove_stale_checkpoint
+    os.remove(self._previous_checkpoints.pop(0))
+FileNotFoundError: [Errno 2] No such file or directory: 'checkpoint__0.pkl'
+starting
+done
+[0.99348 0.99348 0.99348 0.99348 0.99348 0.99982 0.99982 0.99982 0.99982
+ 0.99982 1.00807 1.00807 1.00807 1.00807 1.00807 1.01759 1.01759 1.01759
+ 1.01759 1.01759 1.02757 1.02757 1.02757 1.02757 1.02757 1.03703 1.03703
+ 1.03703 1.03703 1.03703 1.04479 1.04479 1.04479 1.04479 1.04479 0.94707
+ 0.94707 0.94707 0.94707 0.94707 0.95155 0.95155 0.95155 0.95155 0.95155
+ 0.95737 0.95737 0.95737 0.95737 0.9641  0.9641  0.9641  0.9641  0.9641
+ 0.97115 0.97115 0.97115 0.97115 0.97115 0.97782 0.97782 0.97782 0.97782
+ 0.97782 0.9833  0.9833  0.9833  0.9833  0.9833  0.90678 0.90678 0.90678
+ 0.90678 0.90678 0.91003 0.91003 0.91003 0.91003 0.91003 0.91426 0.91426
+ 0.91426 0.91426 0.91426 0.91914 0.91914 0.91914 0.91914 0.91914 0.92426
+ 0.92426 0.92426 0.92426 0.92426 0.92911 0.92911 0.92911 0.92911 0.92911
+ 0.93309 0.93309 0.93309 0.93309 0.93309 0.87134 0.87134 0.87134 0.87134
+ 0.87134 0.87376 0.87376 0.87376 0.87376 0.87376 0.8769  0.8769  0.8769
+ 0.8769  0.8769  0.88053 0.88053 0.88053 0.88053 0.88053 0.88433 0.88433
+ 0.88433 0.88433 0.88433 0.88794 0.88794 0.88794 0.88794 0.88794 0.89089
+ 0.89089 0.89089 0.89089 0.89089 0.83982 0.83982 0.83982 0.83982 0.83982
+ 0.84165 0.84165 0.84165 0.84165 0.84165 0.84403 0.84403 0.84403 0.84403
+ 0.84403 0.84679 0.84679 0.84679 0.84679 0.84679 0.84968 0.84968 0.84968
+ 0.84968 0.84968 0.85241 0.85241 0.85241 0.85241 0.85241 0.85465 0.85465
+ 0.85465 0.85465 0.85465 0.81153 0.81153 0.81153 0.81153 0.81153 0.81294
+ 0.81294 0.81294 0.81294 0.81294 0.81479 0.81479 0.81479 0.81479 0.81479
+ 0.81691 0.81691 0.81691 0.81691 0.81691 0.81914 0.81914 0.81914 0.81914
+ 0.81914 0.82126 0.82126 0.82126 0.82126 0.82126 0.82299 0.82299 0.82299
+ 0.82299 0.78595 0.78595 0.78595 0.78595 0.78706 0.78706 0.78706 0.78706
+ 0.78706 0.78851 0.78851 0.78851 0.78851 0.78851 0.79017 0.79017 0.79017
+ 0.79017 0.79017 0.79192 0.79192 0.79192 0.79192 0.79192 0.79358 0.79358
+ 0.79358 0.79358 0.79358 0.79494 0.79494 0.79494 0.79494 0.76266 0.76266
+ 0.76266 0.76266 0.76266 0.76355 0.76355 0.76355 0.76355 0.76355 0.7647
+ 0.7647  0.7647  0.7647  0.7647  0.76603 0.76603 0.76603 0.76603 0.76603
+ 0.76742 0.76742 0.76742 0.76742 0.76742 0.76874 0.76874 0.76874 0.76874
+ 0.76874 0.76982 0.76982 0.76982 0.76982 0.74135 0.74135 0.74135 0.74135
+ 0.74135 0.74206 0.74206 0.74206 0.74206 0.74206 0.74299 0.74299 0.74299
+ 0.74299 0.74299 0.74406 0.74406 0.74406 0.74406 0.74518 0.74518 0.74518
+ 0.74518 0.74518 0.74624 0.74624 0.74624 0.74624 0.74624 0.74711 0.74711
+ 0.74711 0.74711 0.72174 0.72174 0.72174 0.72174 0.72232 0.72232 0.72232
+ 0.72232 0.72232 0.72307 0.72307 0.72307 0.72307 0.72307 0.72394 0.72394
+ 0.72394 0.72394 0.72394 0.72486 0.72486 0.72486 0.72486 0.72486 0.72572
+ 0.72572 0.72572 0.72572 0.72572 0.72643 0.72643 0.72643 0.72643]
+(341, 2)
+(341,)
+0.8488225513196481
+1.04479
+application called MPI_Abort(MPI_COMM_WORLD, 1) - process 0
+[unset]: write_line error; fd=-1 buf=:cmd=abort exitcode=1
+:
+system msg for write_line failure : Bad file descriptor
+srun: error: notch272: task 2: Exited with exit code 1
+/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/evaluation/fitness_function.py:19: RuntimeWarning: overflow encountered in square
+  return np.sqrt(np.mean(np.square(vector)))
+/uufs/chpc.utah.edu/common/home/u6019587/.venv/bingovenv_v2/lib/python3.7/site-packages/numpy/core/_methods.py:178: RuntimeWarning: overflow encountered in reduce
+  ret = umr_sum(arr, axis, dtype, out, keepdims, where=where)
+/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/symbolic_regression/explicit_regression.py:57: RuntimeWarning: overflow encountered in true_divide
+  return (error / self.training_data.y).flatten()
+Traceback (most recent call last):
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/uufs/chpc.utah.edu/common/home/u6019587/.venv/bingovenv_v2/lib/python3.7/site-packages/mpi4py/__main__.py", line 7, in <module>
+    main()
+  File "/uufs/chpc.utah.edu/common/home/u6019587/.venv/bingovenv_v2/lib/python3.7/site-packages/mpi4py/run.py", line 196, in main
+    run_command_line(args)
+  File "/uufs/chpc.utah.edu/common/home/u6019587/.venv/bingovenv_v2/lib/python3.7/site-packages/mpi4py/run.py", line 47, in run_command_line
+    run_path(sys.argv[0], run_name='__main__')
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 263, in run_path
+    pkg_name=pkg_name, script_name=fname)
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 96, in _run_module_code
+    mod_name, mod_spec, pkg_name, script_name)
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "bingo_evolution.py", line 200, in <module>
+    main(model)
+  File "bingo_evolution.py", line 179, in main
+    execute_generational_steps(model)
+  File "bingo_evolution.py", line 166, in execute_generational_steps
+    checkpoint_base_name='checkpoint_', num_checkpoints=5,stagnation_generations=STAGNATION)
+  File "/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/util/argument_validation.py", line 84, in do_validation
+    return func(*pargs, **kwargs)
+  File "/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/evolutionary_optimizers/evolutionary_optimizer.py", line 143, in evolve_until_convergence
+    self._update_checkpoints(checkpoint_base_name, num_checkpoints)
+  File "/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/evolutionary_optimizers/evolutionary_optimizer.py", line 200, in _update_checkpoints
+    self._remove_stale_checkpoint()
+  File "/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/evolutionary_optimizers/parallel_archipelago.py", line 276, in _remove_stale_checkpoint
+    os.remove(self._previous_checkpoints.pop(0))
+FileNotFoundError: [Errno 2] No such file or directory: 'checkpoint__0.pkl'
+starting
+done
+[0.99348 0.99348 0.99348 0.99348 0.99348 0.99982 0.99982 0.99982 0.99982
+ 0.99982 1.00807 1.00807 1.00807 1.00807 1.00807 1.01759 1.01759 1.01759
+ 1.01759 1.01759 1.02757 1.02757 1.02757 1.02757 1.02757 1.03703 1.03703
+ 1.03703 1.03703 1.03703 1.04479 1.04479 1.04479 1.04479 1.04479 0.94707
+ 0.94707 0.94707 0.94707 0.94707 0.95155 0.95155 0.95155 0.95155 0.95155
+ 0.95737 0.95737 0.95737 0.95737 0.9641  0.9641  0.9641  0.9641  0.9641
+ 0.97115 0.97115 0.97115 0.97115 0.97115 0.97782 0.97782 0.97782 0.97782
+ 0.97782 0.9833  0.9833  0.9833  0.9833  0.9833  0.90678 0.90678 0.90678
+ 0.90678 0.90678 0.91003 0.91003 0.91003 0.91003 0.91003 0.91426 0.91426
+ 0.91426 0.91426 0.91426 0.91914 0.91914 0.91914 0.91914 0.91914 0.92426
+ 0.92426 0.92426 0.92426 0.92426 0.92911 0.92911 0.92911 0.92911 0.92911
+ 0.93309 0.93309 0.93309 0.93309 0.93309 0.87134 0.87134 0.87134 0.87134
+ 0.87134 0.87376 0.87376 0.87376 0.87376 0.87376 0.8769  0.8769  0.8769
+ 0.8769  0.8769  0.88053 0.88053 0.88053 0.88053 0.88053 0.88433 0.88433
+ 0.88433 0.88433 0.88433 0.88794 0.88794 0.88794 0.88794 0.88794 0.89089
+ 0.89089 0.89089 0.89089 0.89089 0.83982 0.83982 0.83982 0.83982 0.83982
+ 0.84165 0.84165 0.84165 0.84165 0.84165 0.84403 0.84403 0.84403 0.84403
+ 0.84403 0.84679 0.84679 0.84679 0.84679 0.84679 0.84968 0.84968 0.84968
+ 0.84968 0.84968 0.85241 0.85241 0.85241 0.85241 0.85241 0.85465 0.85465
+ 0.85465 0.85465 0.85465 0.81153 0.81153 0.81153 0.81153 0.81153 0.81294
+ 0.81294 0.81294 0.81294 0.81294 0.81479 0.81479 0.81479 0.81479 0.81479
+ 0.81691 0.81691 0.81691 0.81691 0.81691 0.81914 0.81914 0.81914 0.81914
+ 0.81914 0.82126 0.82126 0.82126 0.82126 0.82126 0.82299 0.82299 0.82299
+ 0.82299 0.78595 0.78595 0.78595 0.78595 0.78706 0.78706 0.78706 0.78706
+ 0.78706 0.78851 0.78851 0.78851 0.78851 0.78851 0.79017 0.79017 0.79017
+ 0.79017 0.79017 0.79192 0.79192 0.79192 0.79192 0.79192 0.79358 0.79358
+ 0.79358 0.79358 0.79358 0.79494 0.79494 0.79494 0.79494 0.76266 0.76266
+ 0.76266 0.76266 0.76266 0.76355 0.76355 0.76355 0.76355 0.76355 0.7647
+ 0.7647  0.7647  0.7647  0.7647  0.76603 0.76603 0.76603 0.76603 0.76603
+ 0.76742 0.76742 0.76742 0.76742 0.76742 0.76874 0.76874 0.76874 0.76874
+ 0.76874 0.76982 0.76982 0.76982 0.76982 0.74135 0.74135 0.74135 0.74135
+ 0.74135 0.74206 0.74206 0.74206 0.74206 0.74206 0.74299 0.74299 0.74299
+ 0.74299 0.74299 0.74406 0.74406 0.74406 0.74406 0.74518 0.74518 0.74518
+ 0.74518 0.74518 0.74624 0.74624 0.74624 0.74624 0.74624 0.74711 0.74711
+ 0.74711 0.74711 0.72174 0.72174 0.72174 0.72174 0.72232 0.72232 0.72232
+ 0.72232 0.72232 0.72307 0.72307 0.72307 0.72307 0.72307 0.72394 0.72394
+ 0.72394 0.72394 0.72394 0.72486 0.72486 0.72486 0.72486 0.72486 0.72572
+ 0.72572 0.72572 0.72572 0.72572 0.72643 0.72643 0.72643 0.72643]
+(341, 2)
+(341,)
+0.8488225513196481
+1.04479
+application called MPI_Abort(MPI_COMM_WORLD, 1) - process 0
+[unset]: write_line error; fd=-1 buf=:cmd=abort exitcode=1
+:
+system msg for write_line failure : Bad file descriptor
+srun: error: notch272: task 3: Exited with exit code 1
+/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/evaluation/fitness_function.py:19: RuntimeWarning: overflow encountered in square
+  return np.sqrt(np.mean(np.square(vector)))
+/uufs/chpc.utah.edu/common/home/u6019587/.venv/bingovenv_v2/lib/python3.7/site-packages/numpy/core/_methods.py:178: RuntimeWarning: overflow encountered in reduce
+  ret = umr_sum(arr, axis, dtype, out, keepdims, where=where)
+Traceback (most recent call last):
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/uufs/chpc.utah.edu/common/home/u6019587/.venv/bingovenv_v2/lib/python3.7/site-packages/mpi4py/__main__.py", line 7, in <module>
+    main()
+  File "/uufs/chpc.utah.edu/common/home/u6019587/.venv/bingovenv_v2/lib/python3.7/site-packages/mpi4py/run.py", line 196, in main
+    run_command_line(args)
+  File "/uufs/chpc.utah.edu/common/home/u6019587/.venv/bingovenv_v2/lib/python3.7/site-packages/mpi4py/run.py", line 47, in run_command_line
+    run_path(sys.argv[0], run_name='__main__')
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 263, in run_path
+    pkg_name=pkg_name, script_name=fname)
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 96, in _run_module_code
+    mod_name, mod_spec, pkg_name, script_name)
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "bingo_evolution.py", line 200, in <module>
+    main(model)
+  File "bingo_evolution.py", line 179, in main
+    execute_generational_steps(model)
+  File "bingo_evolution.py", line 166, in execute_generational_steps
+    checkpoint_base_name='checkpoint_', num_checkpoints=5,stagnation_generations=STAGNATION)
+  File "/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/util/argument_validation.py", line 84, in do_validation
+    return func(*pargs, **kwargs)
+  File "/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/evolutionary_optimizers/evolutionary_optimizer.py", line 143, in evolve_until_convergence
+    self._update_checkpoints(checkpoint_base_name, num_checkpoints)
+  File "/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/evolutionary_optimizers/evolutionary_optimizer.py", line 200, in _update_checkpoints
+    self._remove_stale_checkpoint()
+  File "/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/evolutionary_optimizers/parallel_archipelago.py", line 276, in _remove_stale_checkpoint
+    os.remove(self._previous_checkpoints.pop(0))
+FileNotFoundError: [Errno 2] No such file or directory: 'checkpoint__0.pkl'
+starting
+done
+[0.99348 0.99348 0.99348 0.99348 0.99348 0.99982 0.99982 0.99982 0.99982
+ 0.99982 1.00807 1.00807 1.00807 1.00807 1.00807 1.01759 1.01759 1.01759
+ 1.01759 1.01759 1.02757 1.02757 1.02757 1.02757 1.02757 1.03703 1.03703
+ 1.03703 1.03703 1.03703 1.04479 1.04479 1.04479 1.04479 1.04479 0.94707
+ 0.94707 0.94707 0.94707 0.94707 0.95155 0.95155 0.95155 0.95155 0.95155
+ 0.95737 0.95737 0.95737 0.95737 0.9641  0.9641  0.9641  0.9641  0.9641
+ 0.97115 0.97115 0.97115 0.97115 0.97115 0.97782 0.97782 0.97782 0.97782
+ 0.97782 0.9833  0.9833  0.9833  0.9833  0.9833  0.90678 0.90678 0.90678
+ 0.90678 0.90678 0.91003 0.91003 0.91003 0.91003 0.91003 0.91426 0.91426
+ 0.91426 0.91426 0.91426 0.91914 0.91914 0.91914 0.91914 0.91914 0.92426
+ 0.92426 0.92426 0.92426 0.92426 0.92911 0.92911 0.92911 0.92911 0.92911
+ 0.93309 0.93309 0.93309 0.93309 0.93309 0.87134 0.87134 0.87134 0.87134
+ 0.87134 0.87376 0.87376 0.87376 0.87376 0.87376 0.8769  0.8769  0.8769
+ 0.8769  0.8769  0.88053 0.88053 0.88053 0.88053 0.88053 0.88433 0.88433
+ 0.88433 0.88433 0.88433 0.88794 0.88794 0.88794 0.88794 0.88794 0.89089
+ 0.89089 0.89089 0.89089 0.89089 0.83982 0.83982 0.83982 0.83982 0.83982
+ 0.84165 0.84165 0.84165 0.84165 0.84165 0.84403 0.84403 0.84403 0.84403
+ 0.84403 0.84679 0.84679 0.84679 0.84679 0.84679 0.84968 0.84968 0.84968
+ 0.84968 0.84968 0.85241 0.85241 0.85241 0.85241 0.85241 0.85465 0.85465
+ 0.85465 0.85465 0.85465 0.81153 0.81153 0.81153 0.81153 0.81153 0.81294
+ 0.81294 0.81294 0.81294 0.81294 0.81479 0.81479 0.81479 0.81479 0.81479
+ 0.81691 0.81691 0.81691 0.81691 0.81691 0.81914 0.81914 0.81914 0.81914
+ 0.81914 0.82126 0.82126 0.82126 0.82126 0.82126 0.82299 0.82299 0.82299
+ 0.82299 0.78595 0.78595 0.78595 0.78595 0.78706 0.78706 0.78706 0.78706
+ 0.78706 0.78851 0.78851 0.78851 0.78851 0.78851 0.79017 0.79017 0.79017
+ 0.79017 0.79017 0.79192 0.79192 0.79192 0.79192 0.79192 0.79358 0.79358
+ 0.79358 0.79358 0.79358 0.79494 0.79494 0.79494 0.79494 0.76266 0.76266
+ 0.76266 0.76266 0.76266 0.76355 0.76355 0.76355 0.76355 0.76355 0.7647
+ 0.7647  0.7647  0.7647  0.7647  0.76603 0.76603 0.76603 0.76603 0.76603
+ 0.76742 0.76742 0.76742 0.76742 0.76742 0.76874 0.76874 0.76874 0.76874
+ 0.76874 0.76982 0.76982 0.76982 0.76982 0.74135 0.74135 0.74135 0.74135
+ 0.74135 0.74206 0.74206 0.74206 0.74206 0.74206 0.74299 0.74299 0.74299
+ 0.74299 0.74299 0.74406 0.74406 0.74406 0.74406 0.74518 0.74518 0.74518
+ 0.74518 0.74518 0.74624 0.74624 0.74624 0.74624 0.74624 0.74711 0.74711
+ 0.74711 0.74711 0.72174 0.72174 0.72174 0.72174 0.72232 0.72232 0.72232
+ 0.72232 0.72232 0.72307 0.72307 0.72307 0.72307 0.72307 0.72394 0.72394
+ 0.72394 0.72394 0.72394 0.72486 0.72486 0.72486 0.72486 0.72486 0.72572
+ 0.72572 0.72572 0.72572 0.72572 0.72643 0.72643 0.72643 0.72643]
+(341, 2)
+(341,)
+0.8488225513196481
+1.04479
+application called MPI_Abort(MPI_COMM_WORLD, 1) - process 0
+[unset]: write_line error; fd=-1 buf=:cmd=abort exitcode=1
+:
+system msg for write_line failure : Bad file descriptor
+srun: error: notch272: task 4: Exited with exit code 1
+/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/evaluation/fitness_function.py:19: RuntimeWarning: overflow encountered in square
+  return np.sqrt(np.mean(np.square(vector)))
+/uufs/chpc.utah.edu/common/home/u6019587/.venv/bingovenv_v2/lib/python3.7/site-packages/numpy/core/_methods.py:178: RuntimeWarning: overflow encountered in reduce
+  ret = umr_sum(arr, axis, dtype, out, keepdims, where=where)
+Traceback (most recent call last):
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/uufs/chpc.utah.edu/common/home/u6019587/.venv/bingovenv_v2/lib/python3.7/site-packages/mpi4py/__main__.py", line 7, in <module>
+    main()
+  File "/uufs/chpc.utah.edu/common/home/u6019587/.venv/bingovenv_v2/lib/python3.7/site-packages/mpi4py/run.py", line 196, in main
+    run_command_line(args)
+  File "/uufs/chpc.utah.edu/common/home/u6019587/.venv/bingovenv_v2/lib/python3.7/site-packages/mpi4py/run.py", line 47, in run_command_line
+    run_path(sys.argv[0], run_name='__main__')
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 263, in run_path
+    pkg_name=pkg_name, script_name=fname)
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 96, in _run_module_code
+    mod_name, mod_spec, pkg_name, script_name)
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "bingo_evolution.py", line 200, in <module>
+    main(model)
+  File "bingo_evolution.py", line 179, in main
+    execute_generational_steps(model)
+  File "bingo_evolution.py", line 166, in execute_generational_steps
+    checkpoint_base_name='checkpoint_', num_checkpoints=5,stagnation_generations=STAGNATION)
+  File "/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/util/argument_validation.py", line 84, in do_validation
+    return func(*pargs, **kwargs)
+  File "/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/evolutionary_optimizers/evolutionary_optimizer.py", line 143, in evolve_until_convergence
+    self._update_checkpoints(checkpoint_base_name, num_checkpoints)
+  File "/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/evolutionary_optimizers/evolutionary_optimizer.py", line 200, in _update_checkpoints
+    self._remove_stale_checkpoint()
+  File "/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/evolutionary_optimizers/parallel_archipelago.py", line 276, in _remove_stale_checkpoint
+    os.remove(self._previous_checkpoints.pop(0))
+FileNotFoundError: [Errno 2] No such file or directory: 'checkpoint__0.pkl'
+starting
+done
+[0.99348 0.99348 0.99348 0.99348 0.99348 0.99982 0.99982 0.99982 0.99982
+ 0.99982 1.00807 1.00807 1.00807 1.00807 1.00807 1.01759 1.01759 1.01759
+ 1.01759 1.01759 1.02757 1.02757 1.02757 1.02757 1.02757 1.03703 1.03703
+ 1.03703 1.03703 1.03703 1.04479 1.04479 1.04479 1.04479 1.04479 0.94707
+ 0.94707 0.94707 0.94707 0.94707 0.95155 0.95155 0.95155 0.95155 0.95155
+ 0.95737 0.95737 0.95737 0.95737 0.9641  0.9641  0.9641  0.9641  0.9641
+ 0.97115 0.97115 0.97115 0.97115 0.97115 0.97782 0.97782 0.97782 0.97782
+ 0.97782 0.9833  0.9833  0.9833  0.9833  0.9833  0.90678 0.90678 0.90678
+ 0.90678 0.90678 0.91003 0.91003 0.91003 0.91003 0.91003 0.91426 0.91426
+ 0.91426 0.91426 0.91426 0.91914 0.91914 0.91914 0.91914 0.91914 0.92426
+ 0.92426 0.92426 0.92426 0.92426 0.92911 0.92911 0.92911 0.92911 0.92911
+ 0.93309 0.93309 0.93309 0.93309 0.93309 0.87134 0.87134 0.87134 0.87134
+ 0.87134 0.87376 0.87376 0.87376 0.87376 0.87376 0.8769  0.8769  0.8769
+ 0.8769  0.8769  0.88053 0.88053 0.88053 0.88053 0.88053 0.88433 0.88433
+ 0.88433 0.88433 0.88433 0.88794 0.88794 0.88794 0.88794 0.88794 0.89089
+ 0.89089 0.89089 0.89089 0.89089 0.83982 0.83982 0.83982 0.83982 0.83982
+ 0.84165 0.84165 0.84165 0.84165 0.84165 0.84403 0.84403 0.84403 0.84403
+ 0.84403 0.84679 0.84679 0.84679 0.84679 0.84679 0.84968 0.84968 0.84968
+ 0.84968 0.84968 0.85241 0.85241 0.85241 0.85241 0.85241 0.85465 0.85465
+ 0.85465 0.85465 0.85465 0.81153 0.81153 0.81153 0.81153 0.81153 0.81294
+ 0.81294 0.81294 0.81294 0.81294 0.81479 0.81479 0.81479 0.81479 0.81479
+ 0.81691 0.81691 0.81691 0.81691 0.81691 0.81914 0.81914 0.81914 0.81914
+ 0.81914 0.82126 0.82126 0.82126 0.82126 0.82126 0.82299 0.82299 0.82299
+ 0.82299 0.78595 0.78595 0.78595 0.78595 0.78706 0.78706 0.78706 0.78706
+ 0.78706 0.78851 0.78851 0.78851 0.78851 0.78851 0.79017 0.79017 0.79017
+ 0.79017 0.79017 0.79192 0.79192 0.79192 0.79192 0.79192 0.79358 0.79358
+ 0.79358 0.79358 0.79358 0.79494 0.79494 0.79494 0.79494 0.76266 0.76266
+ 0.76266 0.76266 0.76266 0.76355 0.76355 0.76355 0.76355 0.76355 0.7647
+ 0.7647  0.7647  0.7647  0.7647  0.76603 0.76603 0.76603 0.76603 0.76603
+ 0.76742 0.76742 0.76742 0.76742 0.76742 0.76874 0.76874 0.76874 0.76874
+ 0.76874 0.76982 0.76982 0.76982 0.76982 0.74135 0.74135 0.74135 0.74135
+ 0.74135 0.74206 0.74206 0.74206 0.74206 0.74206 0.74299 0.74299 0.74299
+ 0.74299 0.74299 0.74406 0.74406 0.74406 0.74406 0.74518 0.74518 0.74518
+ 0.74518 0.74518 0.74624 0.74624 0.74624 0.74624 0.74624 0.74711 0.74711
+ 0.74711 0.74711 0.72174 0.72174 0.72174 0.72174 0.72232 0.72232 0.72232
+ 0.72232 0.72232 0.72307 0.72307 0.72307 0.72307 0.72307 0.72394 0.72394
+ 0.72394 0.72394 0.72394 0.72486 0.72486 0.72486 0.72486 0.72486 0.72572
+ 0.72572 0.72572 0.72572 0.72572 0.72643 0.72643 0.72643 0.72643]
+(341, 2)
+(341,)
+0.8488225513196481
+1.04479
+application called MPI_Abort(MPI_COMM_WORLD, 1) - process 0
+[unset]: write_line error; fd=-1 buf=:cmd=abort exitcode=1
+:
+system msg for write_line failure : Bad file descriptor
+srun: error: notch272: task 6: Exited with exit code 1
+starting
+done
+[0.99348 0.99348 0.99348 0.99348 0.99348 0.99982 0.99982 0.99982 0.99982
+ 0.99982 1.00807 1.00807 1.00807 1.00807 1.00807 1.01759 1.01759 1.01759
+ 1.01759 1.01759 1.02757 1.02757 1.02757 1.02757 1.02757 1.03703 1.03703
+ 1.03703 1.03703 1.03703 1.04479 1.04479 1.04479 1.04479 1.04479 0.94707
+ 0.94707 0.94707 0.94707 0.94707 0.95155 0.95155 0.95155 0.95155 0.95155
+ 0.95737 0.95737 0.95737 0.95737 0.9641  0.9641  0.9641  0.9641  0.9641
+ 0.97115 0.97115 0.97115 0.97115 0.97115 0.97782 0.97782 0.97782 0.97782
+ 0.97782 0.9833  0.9833  0.9833  0.9833  0.9833  0.90678 0.90678 0.90678
+ 0.90678 0.90678 0.91003 0.91003 0.91003 0.91003 0.91003 0.91426 0.91426
+ 0.91426 0.91426 0.91426 0.91914 0.91914 0.91914 0.91914 0.91914 0.92426
+ 0.92426 0.92426 0.92426 0.92426 0.92911 0.92911 0.92911 0.92911 0.92911
+ 0.93309 0.93309 0.93309 0.93309 0.93309 0.87134 0.87134 0.87134 0.87134
+ 0.87134 0.87376 0.87376 0.87376 0.87376 0.87376 0.8769  0.8769  0.8769
+ 0.8769  0.8769  0.88053 0.88053 0.88053 0.88053 0.88053 0.88433 0.88433
+ 0.88433 0.88433 0.88433 0.88794 0.88794 0.88794 0.88794 0.88794 0.89089
+ 0.89089 0.89089 0.89089 0.89089 0.83982 0.83982 0.83982 0.83982 0.83982
+ 0.84165 0.84165 0.84165 0.84165 0.84165 0.84403 0.84403 0.84403 0.84403
+ 0.84403 0.84679 0.84679 0.84679 0.84679 0.84679 0.84968 0.84968 0.84968
+ 0.84968 0.84968 0.85241 0.85241 0.85241 0.85241 0.85241 0.85465 0.85465
+ 0.85465 0.85465 0.85465 0.81153 0.81153 0.81153 0.81153 0.81153 0.81294
+ 0.81294 0.81294 0.81294 0.81294 0.81479 0.81479 0.81479 0.81479 0.81479
+ 0.81691 0.81691 0.81691 0.81691 0.81691 0.81914 0.81914 0.81914 0.81914
+ 0.81914 0.82126 0.82126 0.82126 0.82126 0.82126 0.82299 0.82299 0.82299
+ 0.82299 0.78595 0.78595 0.78595 0.78595 0.78706 0.78706 0.78706 0.78706
+ 0.78706 0.78851 0.78851 0.78851 0.78851 0.78851 0.79017 0.79017 0.79017
+ 0.79017 0.79017 0.79192 0.79192 0.79192 0.79192 0.79192 0.79358 0.79358
+ 0.79358 0.79358 0.79358 0.79494 0.79494 0.79494 0.79494 0.76266 0.76266
+ 0.76266 0.76266 0.76266 0.76355 0.76355 0.76355 0.76355 0.76355 0.7647
+ 0.7647  0.7647  0.7647  0.7647  0.76603 0.76603 0.76603 0.76603 0.76603
+ 0.76742 0.76742 0.76742 0.76742 0.76742 0.76874 0.76874 0.76874 0.76874
+ 0.76874 0.76982 0.76982 0.76982 0.76982 0.74135 0.74135 0.74135 0.74135
+ 0.74135 0.74206 0.74206 0.74206 0.74206 0.74206 0.74299 0.74299 0.74299
+ 0.74299 0.74299 0.74406 0.74406 0.74406 0.74406 0.74518 0.74518 0.74518
+ 0.74518 0.74518 0.74624 0.74624 0.74624 0.74624 0.74624 0.74711 0.74711
+ 0.74711 0.74711 0.72174 0.72174 0.72174 0.72174 0.72232 0.72232 0.72232
+ 0.72232 0.72232 0.72307 0.72307 0.72307 0.72307 0.72307 0.72394 0.72394
+ 0.72394 0.72394 0.72394 0.72486 0.72486 0.72486 0.72486 0.72486 0.72572
+ 0.72572 0.72572 0.72572 0.72572 0.72643 0.72643 0.72643 0.72643]
+(341, 2)
+(341,)
+0.8488225513196481
+1.04479
+/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/evaluation/fitness_function.py:19: RuntimeWarning: overflow encountered in square
+  return np.sqrt(np.mean(np.square(vector)))
+/uufs/chpc.utah.edu/common/home/u6019587/.venv/bingovenv_v2/lib/python3.7/site-packages/numpy/core/_methods.py:178: RuntimeWarning: overflow encountered in reduce
+  ret = umr_sum(arr, axis, dtype, out, keepdims, where=where)
+Traceback (most recent call last):
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/uufs/chpc.utah.edu/common/home/u6019587/.venv/bingovenv_v2/lib/python3.7/site-packages/mpi4py/__main__.py", line 7, in <module>
+    main()
+  File "/uufs/chpc.utah.edu/common/home/u6019587/.venv/bingovenv_v2/lib/python3.7/site-packages/mpi4py/run.py", line 196, in main
+    run_command_line(args)
+  File "/uufs/chpc.utah.edu/common/home/u6019587/.venv/bingovenv_v2/lib/python3.7/site-packages/mpi4py/run.py", line 47, in run_command_line
+    run_path(sys.argv[0], run_name='__main__')
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 263, in run_path
+    pkg_name=pkg_name, script_name=fname)
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 96, in _run_module_code
+    mod_name, mod_spec, pkg_name, script_name)
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "bingo_evolution.py", line 200, in <module>
+    main(model)
+  File "bingo_evolution.py", line 179, in main
+    execute_generational_steps(model)
+  File "bingo_evolution.py", line 166, in execute_generational_steps
+    checkpoint_base_name='checkpoint_', num_checkpoints=5,stagnation_generations=STAGNATION)
+  File "/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/util/argument_validation.py", line 84, in do_validation
+    return func(*pargs, **kwargs)
+  File "/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/evolutionary_optimizers/evolutionary_optimizer.py", line 143, in evolve_until_convergence
+    self._update_checkpoints(checkpoint_base_name, num_checkpoints)
+  File "/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/evolutionary_optimizers/evolutionary_optimizer.py", line 200, in _update_checkpoints
+    self._remove_stale_checkpoint()
+  File "/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/evolutionary_optimizers/parallel_archipelago.py", line 276, in _remove_stale_checkpoint
+    os.remove(self._previous_checkpoints.pop(0))
+FileNotFoundError: [Errno 2] No such file or directory: 'checkpoint__0.pkl'
+application called MPI_Abort(MPI_COMM_WORLD, 1) - process 0
+[unset]: write_line error; fd=-1 buf=:cmd=abort exitcode=1
+:
+system msg for write_line failure : Bad file descriptor
+srun: error: notch272: task 0: Exited with exit code 1
+/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/evaluation/fitness_function.py:19: RuntimeWarning: overflow encountered in square
+  return np.sqrt(np.mean(np.square(vector)))
+/uufs/chpc.utah.edu/common/home/u6019587/.venv/bingovenv_v2/lib/python3.7/site-packages/numpy/core/_methods.py:178: RuntimeWarning: overflow encountered in reduce
+  ret = umr_sum(arr, axis, dtype, out, keepdims, where=where)
+Traceback (most recent call last):
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/uufs/chpc.utah.edu/common/home/u6019587/.venv/bingovenv_v2/lib/python3.7/site-packages/mpi4py/__main__.py", line 7, in <module>
+    main()
+  File "/uufs/chpc.utah.edu/common/home/u6019587/.venv/bingovenv_v2/lib/python3.7/site-packages/mpi4py/run.py", line 196, in main
+    run_command_line(args)
+  File "/uufs/chpc.utah.edu/common/home/u6019587/.venv/bingovenv_v2/lib/python3.7/site-packages/mpi4py/run.py", line 47, in run_command_line
+    run_path(sys.argv[0], run_name='__main__')
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 263, in run_path
+    pkg_name=pkg_name, script_name=fname)
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 96, in _run_module_code
+    mod_name, mod_spec, pkg_name, script_name)
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "bingo_evolution.py", line 200, in <module>
+    main(model)
+  File "bingo_evolution.py", line 179, in main
+    execute_generational_steps(model)
+  File "bingo_evolution.py", line 166, in execute_generational_steps
+    checkpoint_base_name='checkpoint_', num_checkpoints=5,stagnation_generations=STAGNATION)
+  File "/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/util/argument_validation.py", line 84, in do_validation
+    return func(*pargs, **kwargs)
+  File "/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/evolutionary_optimizers/evolutionary_optimizer.py", line 143, in evolve_until_convergence
+    self._update_checkpoints(checkpoint_base_name, num_checkpoints)
+  File "/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/evolutionary_optimizers/evolutionary_optimizer.py", line 200, in _update_checkpoints
+    self._remove_stale_checkpoint()
+  File "/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/evolutionary_optimizers/parallel_archipelago.py", line 276, in _remove_stale_checkpoint
+    os.remove(self._previous_checkpoints.pop(0))
+FileNotFoundError: [Errno 2] No such file or directory: 'checkpoint__0.pkl'
+starting
+done
+[0.99348 0.99348 0.99348 0.99348 0.99348 0.99982 0.99982 0.99982 0.99982
+ 0.99982 1.00807 1.00807 1.00807 1.00807 1.00807 1.01759 1.01759 1.01759
+ 1.01759 1.01759 1.02757 1.02757 1.02757 1.02757 1.02757 1.03703 1.03703
+ 1.03703 1.03703 1.03703 1.04479 1.04479 1.04479 1.04479 1.04479 0.94707
+ 0.94707 0.94707 0.94707 0.94707 0.95155 0.95155 0.95155 0.95155 0.95155
+ 0.95737 0.95737 0.95737 0.95737 0.9641  0.9641  0.9641  0.9641  0.9641
+ 0.97115 0.97115 0.97115 0.97115 0.97115 0.97782 0.97782 0.97782 0.97782
+ 0.97782 0.9833  0.9833  0.9833  0.9833  0.9833  0.90678 0.90678 0.90678
+ 0.90678 0.90678 0.91003 0.91003 0.91003 0.91003 0.91003 0.91426 0.91426
+ 0.91426 0.91426 0.91426 0.91914 0.91914 0.91914 0.91914 0.91914 0.92426
+ 0.92426 0.92426 0.92426 0.92426 0.92911 0.92911 0.92911 0.92911 0.92911
+ 0.93309 0.93309 0.93309 0.93309 0.93309 0.87134 0.87134 0.87134 0.87134
+ 0.87134 0.87376 0.87376 0.87376 0.87376 0.87376 0.8769  0.8769  0.8769
+ 0.8769  0.8769  0.88053 0.88053 0.88053 0.88053 0.88053 0.88433 0.88433
+ 0.88433 0.88433 0.88433 0.88794 0.88794 0.88794 0.88794 0.88794 0.89089
+ 0.89089 0.89089 0.89089 0.89089 0.83982 0.83982 0.83982 0.83982 0.83982
+ 0.84165 0.84165 0.84165 0.84165 0.84165 0.84403 0.84403 0.84403 0.84403
+ 0.84403 0.84679 0.84679 0.84679 0.84679 0.84679 0.84968 0.84968 0.84968
+ 0.84968 0.84968 0.85241 0.85241 0.85241 0.85241 0.85241 0.85465 0.85465
+ 0.85465 0.85465 0.85465 0.81153 0.81153 0.81153 0.81153 0.81153 0.81294
+ 0.81294 0.81294 0.81294 0.81294 0.81479 0.81479 0.81479 0.81479 0.81479
+ 0.81691 0.81691 0.81691 0.81691 0.81691 0.81914 0.81914 0.81914 0.81914
+ 0.81914 0.82126 0.82126 0.82126 0.82126 0.82126 0.82299 0.82299 0.82299
+ 0.82299 0.78595 0.78595 0.78595 0.78595 0.78706 0.78706 0.78706 0.78706
+ 0.78706 0.78851 0.78851 0.78851 0.78851 0.78851 0.79017 0.79017 0.79017
+ 0.79017 0.79017 0.79192 0.79192 0.79192 0.79192 0.79192 0.79358 0.79358
+ 0.79358 0.79358 0.79358 0.79494 0.79494 0.79494 0.79494 0.76266 0.76266
+ 0.76266 0.76266 0.76266 0.76355 0.76355 0.76355 0.76355 0.76355 0.7647
+ 0.7647  0.7647  0.7647  0.7647  0.76603 0.76603 0.76603 0.76603 0.76603
+ 0.76742 0.76742 0.76742 0.76742 0.76742 0.76874 0.76874 0.76874 0.76874
+ 0.76874 0.76982 0.76982 0.76982 0.76982 0.74135 0.74135 0.74135 0.74135
+ 0.74135 0.74206 0.74206 0.74206 0.74206 0.74206 0.74299 0.74299 0.74299
+ 0.74299 0.74299 0.74406 0.74406 0.74406 0.74406 0.74518 0.74518 0.74518
+ 0.74518 0.74518 0.74624 0.74624 0.74624 0.74624 0.74624 0.74711 0.74711
+ 0.74711 0.74711 0.72174 0.72174 0.72174 0.72174 0.72232 0.72232 0.72232
+ 0.72232 0.72232 0.72307 0.72307 0.72307 0.72307 0.72307 0.72394 0.72394
+ 0.72394 0.72394 0.72394 0.72486 0.72486 0.72486 0.72486 0.72486 0.72572
+ 0.72572 0.72572 0.72572 0.72572 0.72643 0.72643 0.72643 0.72643]
+(341, 2)
+(341,)
+0.8488225513196481
+1.04479
+application called MPI_Abort(MPI_COMM_WORLD, 1) - process 0
+[unset]: write_line error; fd=-1 buf=:cmd=abort exitcode=1
+:
+system msg for write_line failure : Bad file descriptor
+srun: error: notch272: task 7: Exited with exit code 1
+srun: Job step aborted: Waiting up to 62 seconds for job step to finish.
+slurmstepd: error: *** JOB 3855805 ON notch272 CANCELLED AT 2022-02-02T09:49:14 ***
+slurmstepd: error: *** STEP 3855805.0 ON notch272 CANCELLED AT 2022-02-02T09:49:14 ***

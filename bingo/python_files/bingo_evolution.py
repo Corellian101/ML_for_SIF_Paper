@@ -28,7 +28,7 @@ from bingo.evolutionary_algorithms.deterministic_crowding import DeterministicCr
 from bingo.evolutionary_optimizers.island import Island
 
 POP_SIZE = 150
-STACK_SIZE = 64
+STACK_SIZE = 20
 MAX_GENERATIONS = 800000
 FITNESS_THRESHOLD = 1e-10
 CHECK_FREQUENCY = 1000
@@ -36,6 +36,11 @@ MIN_GENERATIONS = 1000
 CROSSOVER_PROBABILITY = 0.6
 MUTATION_PROBABILITY = 0.4
 STAGNATION = 100000
+
+
+solve_g = 1
+test = True
+#logfile = 'bing_log'
 
 def sort(data):
     models = []
@@ -77,51 +82,46 @@ def plot_pareto_front(hall_of_fame):
 def execute_generational_steps(model):
     communicator = MPI.COMM_WORLD
     rank = MPI.COMM_WORLD.Get_rank()
+    #logging.basicConfig(filename=f"{log_file}_{rank}.log",
+    #                    filemode="a", level=logging.DEBUG)
 
     x = None
     y = None
 
     if rank == 0:
 
-        df = pd.read_csv('data_for_bingo.csv')
-        #df['sin_phi'] = np.sin(df.phi)
-        #df['cos_phi'] = np.cos(df.phi)
+        # read in training data
+        if not solve_g:
+            # M_data ['a/c','a/t','c/b','phi','F','Mg']
+            data = np.load('M_data.npy')
+            x = data[:, [0, 2]]
+            y = data[:, -1]
+        elif solve_g:
+            # g_data [a/t, a/t, c/b, phi, F, Mg, M, g]
+            data = np.load('g_data.npy')
+            x = data[:, [0, 1, 3]]
+            y = data[:, -1]
+            if not np.isclose(data[:,-3].flatten(), data[:,-2].flatten()*data[:,-1].flatten()).all():
+                raise ValueError('M and g not matching with Mg')
 
-        #y = df.F.values
 
-        #x = df[['a_c', 'a_t', 'sin_phi', 'cos_phi', 'c_b']].values
-        data = df[['a_c','a_t','c_b','phi','F']].values
-        models = sort(data)
-
-        data = np.zeros(5)
-        #phis = np.linspace(0,np.pi,10)
-        phis = [np.pi/2]
-        for m in models:
-            if m[0,0] > 1:
-                continue
-            for ph in phis:
-                data = np.row_stack((data,m[np.where(m[:,3] == find_nearest(m[:,3],ph))[0][0]]))
-
-        data = data[1::]
-        x = data[:,[0,1]]
-        y = data[:,-1]
-
+        # check to make sure all inputs are correct
+        print('x')
+        print(x)
+        print('y')
         print(y)
+        print('shape x')
         print(np.shape(x))
+        print('shape y')
         print(np.shape(y))
+        print('mean y')
         print(np.mean(y))
+        print('max y')
         print(max(y))
-        x, x_test, y, y_test = train_test_split(x, y, test_size=0.2, random_state=42)
-        # if only doing gradient boosting
-        if model is not None:
-            y_model = 1
-            for i in model:
-                y_model *= i.evaluate_equation_at(x[:,[0,1,2,3]])
-            y = y.flatten()/y_model.flatten()
+        if test:
+            stop
 
 
-    #print(data[:,3])
-    #print(x[0,1000])
     x = MPI.COMM_WORLD.bcast(x, root=0)
     y = MPI.COMM_WORLD.bcast(y, root=0)
 
@@ -133,8 +133,9 @@ def execute_generational_steps(model):
     component_generator.add_operator('-') # -
     component_generator.add_operator('*') # *
     component_generator.add_operator('sqrt') # sqrt
-    #component_generator.add_operator('sin') # sqrt
-    #component_generator.add_operator('cos')
+    if solve_g:
+        component_generator.add_operator('sin') # sqrt
+        component_generator.add_operator('cos')
 
     crossover = AGraphCrossover()
     mutation = AGraphMutation(component_generator)
@@ -142,18 +143,12 @@ def execute_generational_steps(model):
 
     agraph_generator = AGraphGenerator(STACK_SIZE, component_generator, use_simplification=False)
 
-    fitness = ExplicitRegression(training_data=training_data, metric='rmse', relative=True)
-
-    lo_options={'disp':False,
-             'xatol':1e-6,
-             'fatol':1e-6,
-             'maxfev':1000,
-             'maxiter':1000,
-             'adaptive':True}
-    local_opt_fitness = ContinuousLocalOptimization(
-             fitness, algorithm='Nelder-Mead', options=lo_options,
-             tolerance=1e-10)
-
+    fitness = ExplicitRegression(training_data=training_data, metric='mae', relative=True)
+    local_opt_fitness = ContinuousLocalOptimization(fitness, algorithm='lm')
+    local_opt_fitness.optimization_options = {'options':{'xtol':1e-16, 'ftol':1e-16,
+                                                         'eps':0., 'gtol':1e-16,
+                                                         'maxiter':15000}}
+    local_opt_fitness.param_init_bounds = [-1.,1.]
     evaluator = Evaluation(local_opt_fitness)
 
 
@@ -179,6 +174,7 @@ def execute_generational_steps(model):
         print("Generation: ", archipelago.generational_age)
         print_pareto_front(pareto_front)
         plot_pareto_front(pareto_front)
+        #log_trial()
 
 def main(model):
     execute_generational_steps(model)

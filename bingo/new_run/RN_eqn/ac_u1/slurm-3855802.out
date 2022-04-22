@@ -1,0 +1,777 @@
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the standard locale ("C").
+/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/evaluation/fitness_function.py:19: RuntimeWarning: overflow encountered in square
+  return np.sqrt(np.mean(np.square(vector)))
+/uufs/chpc.utah.edu/common/home/u6019587/.venv/bingovenv_v2/lib/python3.7/site-packages/numpy/core/_methods.py:178: RuntimeWarning: overflow encountered in reduce
+  ret = umr_sum(arr, axis, dtype, out, keepdims, where=where)
+Traceback (most recent call last):
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/uufs/chpc.utah.edu/common/home/u6019587/.venv/bingovenv_v2/lib/python3.7/site-packages/mpi4py/__main__.py", line 7, in <module>
+    main()
+  File "/uufs/chpc.utah.edu/common/home/u6019587/.venv/bingovenv_v2/lib/python3.7/site-packages/mpi4py/run.py", line 196, in main
+    run_command_line(args)
+  File "/uufs/chpc.utah.edu/common/home/u6019587/.venv/bingovenv_v2/lib/python3.7/site-packages/mpi4py/run.py", line 47, in run_command_line
+    run_path(sys.argv[0], run_name='__main__')
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 263, in run_path
+    pkg_name=pkg_name, script_name=fname)
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 96, in _run_module_code
+    mod_name, mod_spec, pkg_name, script_name)
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "bingo_evolution.py", line 199, in <module>
+    main(model)
+  File "bingo_evolution.py", line 178, in main
+    execute_generational_steps(model)
+  File "bingo_evolution.py", line 165, in execute_generational_steps
+    checkpoint_base_name='checkpoint_', num_checkpoints=5,stagnation_generations=STAGNATION)
+  File "/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/util/argument_validation.py", line 84, in do_validation
+    return func(*pargs, **kwargs)
+  File "/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/evolutionary_optimizers/evolutionary_optimizer.py", line 143, in evolve_until_convergence
+    self._update_checkpoints(checkpoint_base_name, num_checkpoints)
+  File "/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/evolutionary_optimizers/evolutionary_optimizer.py", line 200, in _update_checkpoints
+    self._remove_stale_checkpoint()
+  File "/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/evolutionary_optimizers/parallel_archipelago.py", line 276, in _remove_stale_checkpoint
+    os.remove(self._previous_checkpoints.pop(0))
+FileNotFoundError: [Errno 2] No such file or directory: 'checkpoint__0.pkl'
+starting
+done
+[1.17842 1.17842 1.17842 1.17842 1.17842 1.17842 1.25871 1.25871 1.25871
+ 1.25871 1.25871 1.36597 1.36597 1.36597 1.36597 1.36597 1.4951  1.4951
+ 1.4951  1.4951  1.4951  1.4951  1.6395  1.6395  1.6395  1.6395  1.6395
+ 1.6395  1.7911  1.7911  1.7911  1.7911  1.7911  1.9404  1.9404  1.9404
+ 1.9404  1.9404  1.9404  1.16406 1.16406 1.16406 1.16406 1.16406 1.16406
+ 1.16406 1.23206 1.23206 1.23206 1.23206 1.23206 1.23206 1.32226 1.32226
+ 1.32226 1.32226 1.32226 1.32226 1.42963 1.42963 1.42963 1.42963 1.42963
+ 1.42963 1.54772 1.54772 1.54772 1.54772 1.54772 1.54772 1.66866 1.66866
+ 1.66866 1.66866 1.66866 1.66866 1.78312 1.78312 1.78312 1.78312 1.78312
+ 1.78312 1.15172 1.15172 1.15172 1.15172 1.15172 1.15172 1.15172 1.21015
+ 1.21015 1.21015 1.21015 1.21015 1.21015 1.28732 1.28732 1.28732 1.28732
+ 1.28732 1.28732 1.37863 1.37863 1.37863 1.37863 1.37863 1.37863 1.47813
+ 1.47813 1.47813 1.47813 1.47813 1.47813 1.57856 1.57856 1.57856 1.57856
+ 1.57856 1.57856 1.67134 1.67134 1.67134 1.67134 1.67134 1.67134 1.14083
+ 1.14083 1.14083 1.14083 1.14083 1.14083 1.14083 1.19149 1.19149 1.19149
+ 1.19149 1.19149 1.19149 1.25822 1.25822 1.25822 1.25822 1.25822 1.25822
+ 1.33682 1.33682 1.33682 1.33682 1.33682 1.33682 1.4219  1.4219  1.4219
+ 1.4219  1.4219  1.4219  1.50687 1.50687 1.50687 1.50687 1.50687 1.50687
+ 1.58392 1.58392 1.58392 1.58392 1.58392 1.58392 1.13101 1.13101 1.13101
+ 1.13101 1.13101 1.13101 1.17524 1.17524 1.17524 1.17524 1.17524 1.17524
+ 1.23335 1.23335 1.23335 1.23335 1.23335 1.23335 1.30156 1.30156 1.30156
+ 1.30156 1.30156 1.30156 1.37498 1.37498 1.37498 1.37498 1.37498 1.37498
+ 1.44763 1.44763 1.44763 1.44763 1.44763 1.44763 1.51247 1.51247 1.51247
+ 1.51247 1.51247 1.51247 1.12201 1.12201 1.12201 1.12201 1.12201 1.12201
+ 1.12201 1.16082 1.16082 1.16082 1.16082 1.16082 1.16082 1.2117  1.2117
+ 1.2117  1.2117  1.2117  1.2117  1.27124 1.27124 1.27124 1.27124 1.27124
+ 1.27124 1.33501 1.33501 1.33501 1.33501 1.33501 1.33501 1.3976  1.3976
+ 1.3976  1.3976  1.3976  1.3976  1.45265 1.45265 1.45265 1.45265 1.45265
+ 1.45265 1.11367 1.11367 1.11367 1.11367 1.11367 1.11367 1.14784 1.14784
+ 1.14784 1.14784 1.14784 1.14784 1.19257 1.19257 1.19257 1.19257 1.19257
+ 1.19257 1.24476 1.24476 1.24476 1.24476 1.24476 1.24476 1.30042 1.30042
+ 1.30042 1.30042 1.30042 1.30042 1.35467 1.35467 1.35467 1.35467 1.35467
+ 1.35467 1.40174 1.40174 1.40174 1.40174 1.40174 1.40174 1.10583 1.10583
+ 1.10583 1.10583 1.10583 1.10583 1.136   1.136   1.136   1.136   1.136
+ 1.136   1.17543 1.17543 1.17543 1.17543 1.17543 1.17543 1.22133 1.22133
+ 1.22133 1.22133 1.22133 1.22133 1.2701  1.2701  1.2701  1.2701  1.2701
+ 1.2701  1.31733 1.31733 1.31733 1.31733 1.31733 1.31733 1.35783 1.35783
+ 1.35783 1.35783 1.35783 1.35783 1.09842 1.09842 1.09842 1.09842 1.09842
+ 1.09842 1.1251  1.1251  1.1251  1.1251  1.1251  1.1251  1.15992 1.15992
+ 1.15992 1.15992 1.15992 1.15992 1.20038 1.20038 1.20038 1.20038 1.20038
+ 1.20038 1.24322 1.24322 1.24322 1.24322 1.24322 1.24322 1.2845  1.2845
+ 1.2845  1.2845  1.2845  1.2845  1.31952 1.31952 1.31952 1.31952 1.31952
+ 1.31952 1.09135 1.09135 1.09135 1.09135 1.09135 1.09135 1.11495 1.11495
+ 1.11495 1.11495 1.11495 1.11495 1.14574 1.14574 1.14574 1.14574 1.14574
+ 1.14574 1.18144 1.18144 1.18144 1.18144 1.18144 1.18144 1.21915 1.21915
+ 1.21915 1.21915 1.21915 1.21915 1.25532 1.25532 1.25532 1.25532 1.25532
+ 1.25532 1.28574 1.28574 1.28574 1.28574 1.28574 1.28574 1.08457 1.08457
+ 1.08457 1.08457 1.10545 1.10545 1.10545 1.10545 1.10545 1.13266 1.13266
+ 1.13266 1.13266 1.13266 1.16418 1.16418 1.16418 1.16418 1.16418 1.1974
+ 1.1974  1.1974  1.1974  1.1974  1.22915 1.22915 1.22915 1.22915 1.22915
+ 1.25568 1.25568 1.25568 1.25568 1.25568 1.0717  1.0717  1.0717  1.0717
+ 1.0717  1.08796 1.08796 1.08796 1.08796 1.08796 1.10914 1.10914 1.10914
+ 1.10914 1.10914 1.13365 1.13365 1.13365 1.13365 1.13365 1.15942 1.15942
+ 1.15942 1.15942 1.15942 1.18396 1.18396 1.18396 1.18396 1.18396 1.20432
+ 1.20432 1.20432 1.20432 1.20432 1.05953 1.05953 1.05953 1.05953 1.05953
+ 1.07204 1.07204 1.07204 1.07204 1.07204 1.08834 1.08834 1.08834 1.08834
+ 1.08834 1.1072  1.1072  1.1072  1.1072  1.1072  1.12706 1.12706 1.12706
+ 1.12706 1.12706 1.146   1.146   1.146   1.146   1.146   1.16176 1.16176
+ 1.16176 1.16176 1.16176 1.0479  1.0479  1.0479  1.0479  1.0479  1.05729
+ 1.05729 1.05729 1.05729 1.05729 1.06955 1.06955 1.06955 1.06955 1.06955
+ 1.08379 1.08379 1.08379 1.08379 1.08379 1.09885 1.09885 1.09885 1.09885
+ 1.09885 1.11335 1.11335 1.11335 1.11335 1.11335 1.12562 1.12562 1.12562
+ 1.12562 1.12562]
+(560, 2)
+(560,)
+1.2673049464285713
+1.9404
+application called MPI_Abort(MPI_COMM_WORLD, 1) - process 0
+[unset]: write_line error; fd=-1 buf=:cmd=abort exitcode=1
+:
+system msg for write_line failure : Bad file descriptor
+srun: error: notch272: task 0: Exited with exit code 1
+/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/evaluation/fitness_function.py:19: RuntimeWarning: overflow encountered in square
+  return np.sqrt(np.mean(np.square(vector)))
+/uufs/chpc.utah.edu/common/home/u6019587/.venv/bingovenv_v2/lib/python3.7/site-packages/numpy/core/_methods.py:178: RuntimeWarning: overflow encountered in reduce
+  ret = umr_sum(arr, axis, dtype, out, keepdims, where=where)
+Traceback (most recent call last):
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/uufs/chpc.utah.edu/common/home/u6019587/.venv/bingovenv_v2/lib/python3.7/site-packages/mpi4py/__main__.py", line 7, in <module>
+    main()
+  File "/uufs/chpc.utah.edu/common/home/u6019587/.venv/bingovenv_v2/lib/python3.7/site-packages/mpi4py/run.py", line 196, in main
+    run_command_line(args)
+  File "/uufs/chpc.utah.edu/common/home/u6019587/.venv/bingovenv_v2/lib/python3.7/site-packages/mpi4py/run.py", line 47, in run_command_line
+    run_path(sys.argv[0], run_name='__main__')
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 263, in run_path
+    pkg_name=pkg_name, script_name=fname)
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 96, in _run_module_code
+    mod_name, mod_spec, pkg_name, script_name)
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "bingo_evolution.py", line 199, in <module>
+    main(model)
+  File "bingo_evolution.py", line 178, in main
+    execute_generational_steps(model)
+  File "bingo_evolution.py", line 165, in execute_generational_steps
+    checkpoint_base_name='checkpoint_', num_checkpoints=5,stagnation_generations=STAGNATION)
+  File "/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/util/argument_validation.py", line 84, in do_validation
+    return func(*pargs, **kwargs)
+  File "/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/evolutionary_optimizers/evolutionary_optimizer.py", line 143, in evolve_until_convergence
+    self._update_checkpoints(checkpoint_base_name, num_checkpoints)
+  File "/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/evolutionary_optimizers/evolutionary_optimizer.py", line 200, in _update_checkpoints
+    self._remove_stale_checkpoint()
+  File "/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/evolutionary_optimizers/parallel_archipelago.py", line 276, in _remove_stale_checkpoint
+    os.remove(self._previous_checkpoints.pop(0))
+FileNotFoundError: [Errno 2] No such file or directory: 'checkpoint__0.pkl'
+starting
+done
+[1.17842 1.17842 1.17842 1.17842 1.17842 1.17842 1.25871 1.25871 1.25871
+ 1.25871 1.25871 1.36597 1.36597 1.36597 1.36597 1.36597 1.4951  1.4951
+ 1.4951  1.4951  1.4951  1.4951  1.6395  1.6395  1.6395  1.6395  1.6395
+ 1.6395  1.7911  1.7911  1.7911  1.7911  1.7911  1.9404  1.9404  1.9404
+ 1.9404  1.9404  1.9404  1.16406 1.16406 1.16406 1.16406 1.16406 1.16406
+ 1.16406 1.23206 1.23206 1.23206 1.23206 1.23206 1.23206 1.32226 1.32226
+ 1.32226 1.32226 1.32226 1.32226 1.42963 1.42963 1.42963 1.42963 1.42963
+ 1.42963 1.54772 1.54772 1.54772 1.54772 1.54772 1.54772 1.66866 1.66866
+ 1.66866 1.66866 1.66866 1.66866 1.78312 1.78312 1.78312 1.78312 1.78312
+ 1.78312 1.15172 1.15172 1.15172 1.15172 1.15172 1.15172 1.15172 1.21015
+ 1.21015 1.21015 1.21015 1.21015 1.21015 1.28732 1.28732 1.28732 1.28732
+ 1.28732 1.28732 1.37863 1.37863 1.37863 1.37863 1.37863 1.37863 1.47813
+ 1.47813 1.47813 1.47813 1.47813 1.47813 1.57856 1.57856 1.57856 1.57856
+ 1.57856 1.57856 1.67134 1.67134 1.67134 1.67134 1.67134 1.67134 1.14083
+ 1.14083 1.14083 1.14083 1.14083 1.14083 1.14083 1.19149 1.19149 1.19149
+ 1.19149 1.19149 1.19149 1.25822 1.25822 1.25822 1.25822 1.25822 1.25822
+ 1.33682 1.33682 1.33682 1.33682 1.33682 1.33682 1.4219  1.4219  1.4219
+ 1.4219  1.4219  1.4219  1.50687 1.50687 1.50687 1.50687 1.50687 1.50687
+ 1.58392 1.58392 1.58392 1.58392 1.58392 1.58392 1.13101 1.13101 1.13101
+ 1.13101 1.13101 1.13101 1.17524 1.17524 1.17524 1.17524 1.17524 1.17524
+ 1.23335 1.23335 1.23335 1.23335 1.23335 1.23335 1.30156 1.30156 1.30156
+ 1.30156 1.30156 1.30156 1.37498 1.37498 1.37498 1.37498 1.37498 1.37498
+ 1.44763 1.44763 1.44763 1.44763 1.44763 1.44763 1.51247 1.51247 1.51247
+ 1.51247 1.51247 1.51247 1.12201 1.12201 1.12201 1.12201 1.12201 1.12201
+ 1.12201 1.16082 1.16082 1.16082 1.16082 1.16082 1.16082 1.2117  1.2117
+ 1.2117  1.2117  1.2117  1.2117  1.27124 1.27124 1.27124 1.27124 1.27124
+ 1.27124 1.33501 1.33501 1.33501 1.33501 1.33501 1.33501 1.3976  1.3976
+ 1.3976  1.3976  1.3976  1.3976  1.45265 1.45265 1.45265 1.45265 1.45265
+ 1.45265 1.11367 1.11367 1.11367 1.11367 1.11367 1.11367 1.14784 1.14784
+ 1.14784 1.14784 1.14784 1.14784 1.19257 1.19257 1.19257 1.19257 1.19257
+ 1.19257 1.24476 1.24476 1.24476 1.24476 1.24476 1.24476 1.30042 1.30042
+ 1.30042 1.30042 1.30042 1.30042 1.35467 1.35467 1.35467 1.35467 1.35467
+ 1.35467 1.40174 1.40174 1.40174 1.40174 1.40174 1.40174 1.10583 1.10583
+ 1.10583 1.10583 1.10583 1.10583 1.136   1.136   1.136   1.136   1.136
+ 1.136   1.17543 1.17543 1.17543 1.17543 1.17543 1.17543 1.22133 1.22133
+ 1.22133 1.22133 1.22133 1.22133 1.2701  1.2701  1.2701  1.2701  1.2701
+ 1.2701  1.31733 1.31733 1.31733 1.31733 1.31733 1.31733 1.35783 1.35783
+ 1.35783 1.35783 1.35783 1.35783 1.09842 1.09842 1.09842 1.09842 1.09842
+ 1.09842 1.1251  1.1251  1.1251  1.1251  1.1251  1.1251  1.15992 1.15992
+ 1.15992 1.15992 1.15992 1.15992 1.20038 1.20038 1.20038 1.20038 1.20038
+ 1.20038 1.24322 1.24322 1.24322 1.24322 1.24322 1.24322 1.2845  1.2845
+ 1.2845  1.2845  1.2845  1.2845  1.31952 1.31952 1.31952 1.31952 1.31952
+ 1.31952 1.09135 1.09135 1.09135 1.09135 1.09135 1.09135 1.11495 1.11495
+ 1.11495 1.11495 1.11495 1.11495 1.14574 1.14574 1.14574 1.14574 1.14574
+ 1.14574 1.18144 1.18144 1.18144 1.18144 1.18144 1.18144 1.21915 1.21915
+ 1.21915 1.21915 1.21915 1.21915 1.25532 1.25532 1.25532 1.25532 1.25532
+ 1.25532 1.28574 1.28574 1.28574 1.28574 1.28574 1.28574 1.08457 1.08457
+ 1.08457 1.08457 1.10545 1.10545 1.10545 1.10545 1.10545 1.13266 1.13266
+ 1.13266 1.13266 1.13266 1.16418 1.16418 1.16418 1.16418 1.16418 1.1974
+ 1.1974  1.1974  1.1974  1.1974  1.22915 1.22915 1.22915 1.22915 1.22915
+ 1.25568 1.25568 1.25568 1.25568 1.25568 1.0717  1.0717  1.0717  1.0717
+ 1.0717  1.08796 1.08796 1.08796 1.08796 1.08796 1.10914 1.10914 1.10914
+ 1.10914 1.10914 1.13365 1.13365 1.13365 1.13365 1.13365 1.15942 1.15942
+ 1.15942 1.15942 1.15942 1.18396 1.18396 1.18396 1.18396 1.18396 1.20432
+ 1.20432 1.20432 1.20432 1.20432 1.05953 1.05953 1.05953 1.05953 1.05953
+ 1.07204 1.07204 1.07204 1.07204 1.07204 1.08834 1.08834 1.08834 1.08834
+ 1.08834 1.1072  1.1072  1.1072  1.1072  1.1072  1.12706 1.12706 1.12706
+ 1.12706 1.12706 1.146   1.146   1.146   1.146   1.146   1.16176 1.16176
+ 1.16176 1.16176 1.16176 1.0479  1.0479  1.0479  1.0479  1.0479  1.05729
+ 1.05729 1.05729 1.05729 1.05729 1.06955 1.06955 1.06955 1.06955 1.06955
+ 1.08379 1.08379 1.08379 1.08379 1.08379 1.09885 1.09885 1.09885 1.09885
+ 1.09885 1.11335 1.11335 1.11335 1.11335 1.11335 1.12562 1.12562 1.12562
+ 1.12562 1.12562]
+(560, 2)
+(560,)
+1.2673049464285713
+1.9404
+application called MPI_Abort(MPI_COMM_WORLD, 1) - process 0
+[unset]: write_line error; fd=-1 buf=:cmd=abort exitcode=1
+:
+system msg for write_line failure : Bad file descriptor
+srun: error: notch272: task 2: Exited with exit code 1
+/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/evaluation/fitness_function.py:19: RuntimeWarning: overflow encountered in square
+  return np.sqrt(np.mean(np.square(vector)))
+/uufs/chpc.utah.edu/common/home/u6019587/.venv/bingovenv_v2/lib/python3.7/site-packages/numpy/core/_methods.py:178: RuntimeWarning: overflow encountered in reduce
+  ret = umr_sum(arr, axis, dtype, out, keepdims, where=where)
+Traceback (most recent call last):
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/uufs/chpc.utah.edu/common/home/u6019587/.venv/bingovenv_v2/lib/python3.7/site-packages/mpi4py/__main__.py", line 7, in <module>
+    main()
+  File "/uufs/chpc.utah.edu/common/home/u6019587/.venv/bingovenv_v2/lib/python3.7/site-packages/mpi4py/run.py", line 196, in main
+    run_command_line(args)
+  File "/uufs/chpc.utah.edu/common/home/u6019587/.venv/bingovenv_v2/lib/python3.7/site-packages/mpi4py/run.py", line 47, in run_command_line
+    run_path(sys.argv[0], run_name='__main__')
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 263, in run_path
+    pkg_name=pkg_name, script_name=fname)
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 96, in _run_module_code
+    mod_name, mod_spec, pkg_name, script_name)
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "bingo_evolution.py", line 199, in <module>
+    main(model)
+  File "bingo_evolution.py", line 178, in main
+    execute_generational_steps(model)
+  File "bingo_evolution.py", line 165, in execute_generational_steps
+    checkpoint_base_name='checkpoint_', num_checkpoints=5,stagnation_generations=STAGNATION)
+  File "/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/util/argument_validation.py", line 84, in do_validation
+    return func(*pargs, **kwargs)
+  File "/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/evolutionary_optimizers/evolutionary_optimizer.py", line 143, in evolve_until_convergence
+    self._update_checkpoints(checkpoint_base_name, num_checkpoints)
+  File "/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/evolutionary_optimizers/evolutionary_optimizer.py", line 200, in _update_checkpoints
+    self._remove_stale_checkpoint()
+  File "/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/evolutionary_optimizers/parallel_archipelago.py", line 276, in _remove_stale_checkpoint
+    os.remove(self._previous_checkpoints.pop(0))
+FileNotFoundError: [Errno 2] No such file or directory: 'checkpoint__0.pkl'
+starting
+done
+[1.17842 1.17842 1.17842 1.17842 1.17842 1.17842 1.25871 1.25871 1.25871
+ 1.25871 1.25871 1.36597 1.36597 1.36597 1.36597 1.36597 1.4951  1.4951
+ 1.4951  1.4951  1.4951  1.4951  1.6395  1.6395  1.6395  1.6395  1.6395
+ 1.6395  1.7911  1.7911  1.7911  1.7911  1.7911  1.9404  1.9404  1.9404
+ 1.9404  1.9404  1.9404  1.16406 1.16406 1.16406 1.16406 1.16406 1.16406
+ 1.16406 1.23206 1.23206 1.23206 1.23206 1.23206 1.23206 1.32226 1.32226
+ 1.32226 1.32226 1.32226 1.32226 1.42963 1.42963 1.42963 1.42963 1.42963
+ 1.42963 1.54772 1.54772 1.54772 1.54772 1.54772 1.54772 1.66866 1.66866
+ 1.66866 1.66866 1.66866 1.66866 1.78312 1.78312 1.78312 1.78312 1.78312
+ 1.78312 1.15172 1.15172 1.15172 1.15172 1.15172 1.15172 1.15172 1.21015
+ 1.21015 1.21015 1.21015 1.21015 1.21015 1.28732 1.28732 1.28732 1.28732
+ 1.28732 1.28732 1.37863 1.37863 1.37863 1.37863 1.37863 1.37863 1.47813
+ 1.47813 1.47813 1.47813 1.47813 1.47813 1.57856 1.57856 1.57856 1.57856
+ 1.57856 1.57856 1.67134 1.67134 1.67134 1.67134 1.67134 1.67134 1.14083
+ 1.14083 1.14083 1.14083 1.14083 1.14083 1.14083 1.19149 1.19149 1.19149
+ 1.19149 1.19149 1.19149 1.25822 1.25822 1.25822 1.25822 1.25822 1.25822
+ 1.33682 1.33682 1.33682 1.33682 1.33682 1.33682 1.4219  1.4219  1.4219
+ 1.4219  1.4219  1.4219  1.50687 1.50687 1.50687 1.50687 1.50687 1.50687
+ 1.58392 1.58392 1.58392 1.58392 1.58392 1.58392 1.13101 1.13101 1.13101
+ 1.13101 1.13101 1.13101 1.17524 1.17524 1.17524 1.17524 1.17524 1.17524
+ 1.23335 1.23335 1.23335 1.23335 1.23335 1.23335 1.30156 1.30156 1.30156
+ 1.30156 1.30156 1.30156 1.37498 1.37498 1.37498 1.37498 1.37498 1.37498
+ 1.44763 1.44763 1.44763 1.44763 1.44763 1.44763 1.51247 1.51247 1.51247
+ 1.51247 1.51247 1.51247 1.12201 1.12201 1.12201 1.12201 1.12201 1.12201
+ 1.12201 1.16082 1.16082 1.16082 1.16082 1.16082 1.16082 1.2117  1.2117
+ 1.2117  1.2117  1.2117  1.2117  1.27124 1.27124 1.27124 1.27124 1.27124
+ 1.27124 1.33501 1.33501 1.33501 1.33501 1.33501 1.33501 1.3976  1.3976
+ 1.3976  1.3976  1.3976  1.3976  1.45265 1.45265 1.45265 1.45265 1.45265
+ 1.45265 1.11367 1.11367 1.11367 1.11367 1.11367 1.11367 1.14784 1.14784
+ 1.14784 1.14784 1.14784 1.14784 1.19257 1.19257 1.19257 1.19257 1.19257
+ 1.19257 1.24476 1.24476 1.24476 1.24476 1.24476 1.24476 1.30042 1.30042
+ 1.30042 1.30042 1.30042 1.30042 1.35467 1.35467 1.35467 1.35467 1.35467
+ 1.35467 1.40174 1.40174 1.40174 1.40174 1.40174 1.40174 1.10583 1.10583
+ 1.10583 1.10583 1.10583 1.10583 1.136   1.136   1.136   1.136   1.136
+ 1.136   1.17543 1.17543 1.17543 1.17543 1.17543 1.17543 1.22133 1.22133
+ 1.22133 1.22133 1.22133 1.22133 1.2701  1.2701  1.2701  1.2701  1.2701
+ 1.2701  1.31733 1.31733 1.31733 1.31733 1.31733 1.31733 1.35783 1.35783
+ 1.35783 1.35783 1.35783 1.35783 1.09842 1.09842 1.09842 1.09842 1.09842
+ 1.09842 1.1251  1.1251  1.1251  1.1251  1.1251  1.1251  1.15992 1.15992
+ 1.15992 1.15992 1.15992 1.15992 1.20038 1.20038 1.20038 1.20038 1.20038
+ 1.20038 1.24322 1.24322 1.24322 1.24322 1.24322 1.24322 1.2845  1.2845
+ 1.2845  1.2845  1.2845  1.2845  1.31952 1.31952 1.31952 1.31952 1.31952
+ 1.31952 1.09135 1.09135 1.09135 1.09135 1.09135 1.09135 1.11495 1.11495
+ 1.11495 1.11495 1.11495 1.11495 1.14574 1.14574 1.14574 1.14574 1.14574
+ 1.14574 1.18144 1.18144 1.18144 1.18144 1.18144 1.18144 1.21915 1.21915
+ 1.21915 1.21915 1.21915 1.21915 1.25532 1.25532 1.25532 1.25532 1.25532
+ 1.25532 1.28574 1.28574 1.28574 1.28574 1.28574 1.28574 1.08457 1.08457
+ 1.08457 1.08457 1.10545 1.10545 1.10545 1.10545 1.10545 1.13266 1.13266
+ 1.13266 1.13266 1.13266 1.16418 1.16418 1.16418 1.16418 1.16418 1.1974
+ 1.1974  1.1974  1.1974  1.1974  1.22915 1.22915 1.22915 1.22915 1.22915
+ 1.25568 1.25568 1.25568 1.25568 1.25568 1.0717  1.0717  1.0717  1.0717
+ 1.0717  1.08796 1.08796 1.08796 1.08796 1.08796 1.10914 1.10914 1.10914
+ 1.10914 1.10914 1.13365 1.13365 1.13365 1.13365 1.13365 1.15942 1.15942
+ 1.15942 1.15942 1.15942 1.18396 1.18396 1.18396 1.18396 1.18396 1.20432
+ 1.20432 1.20432 1.20432 1.20432 1.05953 1.05953 1.05953 1.05953 1.05953
+ 1.07204 1.07204 1.07204 1.07204 1.07204 1.08834 1.08834 1.08834 1.08834
+ 1.08834 1.1072  1.1072  1.1072  1.1072  1.1072  1.12706 1.12706 1.12706
+ 1.12706 1.12706 1.146   1.146   1.146   1.146   1.146   1.16176 1.16176
+ 1.16176 1.16176 1.16176 1.0479  1.0479  1.0479  1.0479  1.0479  1.05729
+ 1.05729 1.05729 1.05729 1.05729 1.06955 1.06955 1.06955 1.06955 1.06955
+ 1.08379 1.08379 1.08379 1.08379 1.08379 1.09885 1.09885 1.09885 1.09885
+ 1.09885 1.11335 1.11335 1.11335 1.11335 1.11335 1.12562 1.12562 1.12562
+ 1.12562 1.12562]
+(560, 2)
+(560,)
+1.2673049464285713
+1.9404
+application called MPI_Abort(MPI_COMM_WORLD, 1) - process 0
+[unset]: write_line error; fd=-1 buf=:cmd=abort exitcode=1
+:
+system msg for write_line failure : Bad file descriptor
+srun: error: notch272: task 4: Exited with exit code 1
+/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/evaluation/fitness_function.py:19: RuntimeWarning: overflow encountered in square
+  return np.sqrt(np.mean(np.square(vector)))
+/uufs/chpc.utah.edu/common/home/u6019587/.venv/bingovenv_v2/lib/python3.7/site-packages/numpy/core/_methods.py:178: RuntimeWarning: overflow encountered in reduce
+  ret = umr_sum(arr, axis, dtype, out, keepdims, where=where)
+Traceback (most recent call last):
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/uufs/chpc.utah.edu/common/home/u6019587/.venv/bingovenv_v2/lib/python3.7/site-packages/mpi4py/__main__.py", line 7, in <module>
+    main()
+  File "/uufs/chpc.utah.edu/common/home/u6019587/.venv/bingovenv_v2/lib/python3.7/site-packages/mpi4py/run.py", line 196, in main
+    run_command_line(args)
+  File "/uufs/chpc.utah.edu/common/home/u6019587/.venv/bingovenv_v2/lib/python3.7/site-packages/mpi4py/run.py", line 47, in run_command_line
+    run_path(sys.argv[0], run_name='__main__')
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 263, in run_path
+    pkg_name=pkg_name, script_name=fname)
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 96, in _run_module_code
+    mod_name, mod_spec, pkg_name, script_name)
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "bingo_evolution.py", line 199, in <module>
+    main(model)
+  File "bingo_evolution.py", line 178, in main
+    execute_generational_steps(model)
+  File "bingo_evolution.py", line 165, in execute_generational_steps
+    checkpoint_base_name='checkpoint_', num_checkpoints=5,stagnation_generations=STAGNATION)
+  File "/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/util/argument_validation.py", line 84, in do_validation
+    return func(*pargs, **kwargs)
+  File "/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/evolutionary_optimizers/evolutionary_optimizer.py", line 143, in evolve_until_convergence
+    self._update_checkpoints(checkpoint_base_name, num_checkpoints)
+  File "/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/evolutionary_optimizers/evolutionary_optimizer.py", line 200, in _update_checkpoints
+    self._remove_stale_checkpoint()
+  File "/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/evolutionary_optimizers/parallel_archipelago.py", line 276, in _remove_stale_checkpoint
+    os.remove(self._previous_checkpoints.pop(0))
+FileNotFoundError: [Errno 2] No such file or directory: 'checkpoint__0.pkl'
+starting
+done
+[1.17842 1.17842 1.17842 1.17842 1.17842 1.17842 1.25871 1.25871 1.25871
+ 1.25871 1.25871 1.36597 1.36597 1.36597 1.36597 1.36597 1.4951  1.4951
+ 1.4951  1.4951  1.4951  1.4951  1.6395  1.6395  1.6395  1.6395  1.6395
+ 1.6395  1.7911  1.7911  1.7911  1.7911  1.7911  1.9404  1.9404  1.9404
+ 1.9404  1.9404  1.9404  1.16406 1.16406 1.16406 1.16406 1.16406 1.16406
+ 1.16406 1.23206 1.23206 1.23206 1.23206 1.23206 1.23206 1.32226 1.32226
+ 1.32226 1.32226 1.32226 1.32226 1.42963 1.42963 1.42963 1.42963 1.42963
+ 1.42963 1.54772 1.54772 1.54772 1.54772 1.54772 1.54772 1.66866 1.66866
+ 1.66866 1.66866 1.66866 1.66866 1.78312 1.78312 1.78312 1.78312 1.78312
+ 1.78312 1.15172 1.15172 1.15172 1.15172 1.15172 1.15172 1.15172 1.21015
+ 1.21015 1.21015 1.21015 1.21015 1.21015 1.28732 1.28732 1.28732 1.28732
+ 1.28732 1.28732 1.37863 1.37863 1.37863 1.37863 1.37863 1.37863 1.47813
+ 1.47813 1.47813 1.47813 1.47813 1.47813 1.57856 1.57856 1.57856 1.57856
+ 1.57856 1.57856 1.67134 1.67134 1.67134 1.67134 1.67134 1.67134 1.14083
+ 1.14083 1.14083 1.14083 1.14083 1.14083 1.14083 1.19149 1.19149 1.19149
+ 1.19149 1.19149 1.19149 1.25822 1.25822 1.25822 1.25822 1.25822 1.25822
+ 1.33682 1.33682 1.33682 1.33682 1.33682 1.33682 1.4219  1.4219  1.4219
+ 1.4219  1.4219  1.4219  1.50687 1.50687 1.50687 1.50687 1.50687 1.50687
+ 1.58392 1.58392 1.58392 1.58392 1.58392 1.58392 1.13101 1.13101 1.13101
+ 1.13101 1.13101 1.13101 1.17524 1.17524 1.17524 1.17524 1.17524 1.17524
+ 1.23335 1.23335 1.23335 1.23335 1.23335 1.23335 1.30156 1.30156 1.30156
+ 1.30156 1.30156 1.30156 1.37498 1.37498 1.37498 1.37498 1.37498 1.37498
+ 1.44763 1.44763 1.44763 1.44763 1.44763 1.44763 1.51247 1.51247 1.51247
+ 1.51247 1.51247 1.51247 1.12201 1.12201 1.12201 1.12201 1.12201 1.12201
+ 1.12201 1.16082 1.16082 1.16082 1.16082 1.16082 1.16082 1.2117  1.2117
+ 1.2117  1.2117  1.2117  1.2117  1.27124 1.27124 1.27124 1.27124 1.27124
+ 1.27124 1.33501 1.33501 1.33501 1.33501 1.33501 1.33501 1.3976  1.3976
+ 1.3976  1.3976  1.3976  1.3976  1.45265 1.45265 1.45265 1.45265 1.45265
+ 1.45265 1.11367 1.11367 1.11367 1.11367 1.11367 1.11367 1.14784 1.14784
+ 1.14784 1.14784 1.14784 1.14784 1.19257 1.19257 1.19257 1.19257 1.19257
+ 1.19257 1.24476 1.24476 1.24476 1.24476 1.24476 1.24476 1.30042 1.30042
+ 1.30042 1.30042 1.30042 1.30042 1.35467 1.35467 1.35467 1.35467 1.35467
+ 1.35467 1.40174 1.40174 1.40174 1.40174 1.40174 1.40174 1.10583 1.10583
+ 1.10583 1.10583 1.10583 1.10583 1.136   1.136   1.136   1.136   1.136
+ 1.136   1.17543 1.17543 1.17543 1.17543 1.17543 1.17543 1.22133 1.22133
+ 1.22133 1.22133 1.22133 1.22133 1.2701  1.2701  1.2701  1.2701  1.2701
+ 1.2701  1.31733 1.31733 1.31733 1.31733 1.31733 1.31733 1.35783 1.35783
+ 1.35783 1.35783 1.35783 1.35783 1.09842 1.09842 1.09842 1.09842 1.09842
+ 1.09842 1.1251  1.1251  1.1251  1.1251  1.1251  1.1251  1.15992 1.15992
+ 1.15992 1.15992 1.15992 1.15992 1.20038 1.20038 1.20038 1.20038 1.20038
+ 1.20038 1.24322 1.24322 1.24322 1.24322 1.24322 1.24322 1.2845  1.2845
+ 1.2845  1.2845  1.2845  1.2845  1.31952 1.31952 1.31952 1.31952 1.31952
+ 1.31952 1.09135 1.09135 1.09135 1.09135 1.09135 1.09135 1.11495 1.11495
+ 1.11495 1.11495 1.11495 1.11495 1.14574 1.14574 1.14574 1.14574 1.14574
+ 1.14574 1.18144 1.18144 1.18144 1.18144 1.18144 1.18144 1.21915 1.21915
+ 1.21915 1.21915 1.21915 1.21915 1.25532 1.25532 1.25532 1.25532 1.25532
+ 1.25532 1.28574 1.28574 1.28574 1.28574 1.28574 1.28574 1.08457 1.08457
+ 1.08457 1.08457 1.10545 1.10545 1.10545 1.10545 1.10545 1.13266 1.13266
+ 1.13266 1.13266 1.13266 1.16418 1.16418 1.16418 1.16418 1.16418 1.1974
+ 1.1974  1.1974  1.1974  1.1974  1.22915 1.22915 1.22915 1.22915 1.22915
+ 1.25568 1.25568 1.25568 1.25568 1.25568 1.0717  1.0717  1.0717  1.0717
+ 1.0717  1.08796 1.08796 1.08796 1.08796 1.08796 1.10914 1.10914 1.10914
+ 1.10914 1.10914 1.13365 1.13365 1.13365 1.13365 1.13365 1.15942 1.15942
+ 1.15942 1.15942 1.15942 1.18396 1.18396 1.18396 1.18396 1.18396 1.20432
+ 1.20432 1.20432 1.20432 1.20432 1.05953 1.05953 1.05953 1.05953 1.05953
+ 1.07204 1.07204 1.07204 1.07204 1.07204 1.08834 1.08834 1.08834 1.08834
+ 1.08834 1.1072  1.1072  1.1072  1.1072  1.1072  1.12706 1.12706 1.12706
+ 1.12706 1.12706 1.146   1.146   1.146   1.146   1.146   1.16176 1.16176
+ 1.16176 1.16176 1.16176 1.0479  1.0479  1.0479  1.0479  1.0479  1.05729
+ 1.05729 1.05729 1.05729 1.05729 1.06955 1.06955 1.06955 1.06955 1.06955
+ 1.08379 1.08379 1.08379 1.08379 1.08379 1.09885 1.09885 1.09885 1.09885
+ 1.09885 1.11335 1.11335 1.11335 1.11335 1.11335 1.12562 1.12562 1.12562
+ 1.12562 1.12562]
+(560, 2)
+(560,)
+1.2673049464285713
+1.9404
+application called MPI_Abort(MPI_COMM_WORLD, 1) - process 0
+[unset]: write_line error; fd=-1 buf=:cmd=abort exitcode=1
+:
+system msg for write_line failure : Bad file descriptor
+srun: error: notch272: task 6: Exited with exit code 1
+/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/evaluation/fitness_function.py:19: RuntimeWarning: overflow encountered in square
+  return np.sqrt(np.mean(np.square(vector)))
+/uufs/chpc.utah.edu/common/home/u6019587/.venv/bingovenv_v2/lib/python3.7/site-packages/numpy/core/_methods.py:178: RuntimeWarning: overflow encountered in reduce
+  ret = umr_sum(arr, axis, dtype, out, keepdims, where=where)
+Traceback (most recent call last):
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/uufs/chpc.utah.edu/common/home/u6019587/.venv/bingovenv_v2/lib/python3.7/site-packages/mpi4py/__main__.py", line 7, in <module>
+    main()
+  File "/uufs/chpc.utah.edu/common/home/u6019587/.venv/bingovenv_v2/lib/python3.7/site-packages/mpi4py/run.py", line 196, in main
+    run_command_line(args)
+  File "/uufs/chpc.utah.edu/common/home/u6019587/.venv/bingovenv_v2/lib/python3.7/site-packages/mpi4py/run.py", line 47, in run_command_line
+    run_path(sys.argv[0], run_name='__main__')
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 263, in run_path
+    pkg_name=pkg_name, script_name=fname)
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 96, in _run_module_code
+    mod_name, mod_spec, pkg_name, script_name)
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "bingo_evolution.py", line 199, in <module>
+    main(model)
+  File "bingo_evolution.py", line 178, in main
+    execute_generational_steps(model)
+  File "bingo_evolution.py", line 165, in execute_generational_steps
+    checkpoint_base_name='checkpoint_', num_checkpoints=5,stagnation_generations=STAGNATION)
+  File "/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/util/argument_validation.py", line 84, in do_validation
+    return func(*pargs, **kwargs)
+  File "/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/evolutionary_optimizers/evolutionary_optimizer.py", line 143, in evolve_until_convergence
+    self._update_checkpoints(checkpoint_base_name, num_checkpoints)
+  File "/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/evolutionary_optimizers/evolutionary_optimizer.py", line 200, in _update_checkpoints
+    self._remove_stale_checkpoint()
+  File "/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/evolutionary_optimizers/parallel_archipelago.py", line 276, in _remove_stale_checkpoint
+    os.remove(self._previous_checkpoints.pop(0))
+FileNotFoundError: [Errno 2] No such file or directory: 'checkpoint__0.pkl'
+starting
+done
+[1.17842 1.17842 1.17842 1.17842 1.17842 1.17842 1.25871 1.25871 1.25871
+ 1.25871 1.25871 1.36597 1.36597 1.36597 1.36597 1.36597 1.4951  1.4951
+ 1.4951  1.4951  1.4951  1.4951  1.6395  1.6395  1.6395  1.6395  1.6395
+ 1.6395  1.7911  1.7911  1.7911  1.7911  1.7911  1.9404  1.9404  1.9404
+ 1.9404  1.9404  1.9404  1.16406 1.16406 1.16406 1.16406 1.16406 1.16406
+ 1.16406 1.23206 1.23206 1.23206 1.23206 1.23206 1.23206 1.32226 1.32226
+ 1.32226 1.32226 1.32226 1.32226 1.42963 1.42963 1.42963 1.42963 1.42963
+ 1.42963 1.54772 1.54772 1.54772 1.54772 1.54772 1.54772 1.66866 1.66866
+ 1.66866 1.66866 1.66866 1.66866 1.78312 1.78312 1.78312 1.78312 1.78312
+ 1.78312 1.15172 1.15172 1.15172 1.15172 1.15172 1.15172 1.15172 1.21015
+ 1.21015 1.21015 1.21015 1.21015 1.21015 1.28732 1.28732 1.28732 1.28732
+ 1.28732 1.28732 1.37863 1.37863 1.37863 1.37863 1.37863 1.37863 1.47813
+ 1.47813 1.47813 1.47813 1.47813 1.47813 1.57856 1.57856 1.57856 1.57856
+ 1.57856 1.57856 1.67134 1.67134 1.67134 1.67134 1.67134 1.67134 1.14083
+ 1.14083 1.14083 1.14083 1.14083 1.14083 1.14083 1.19149 1.19149 1.19149
+ 1.19149 1.19149 1.19149 1.25822 1.25822 1.25822 1.25822 1.25822 1.25822
+ 1.33682 1.33682 1.33682 1.33682 1.33682 1.33682 1.4219  1.4219  1.4219
+ 1.4219  1.4219  1.4219  1.50687 1.50687 1.50687 1.50687 1.50687 1.50687
+ 1.58392 1.58392 1.58392 1.58392 1.58392 1.58392 1.13101 1.13101 1.13101
+ 1.13101 1.13101 1.13101 1.17524 1.17524 1.17524 1.17524 1.17524 1.17524
+ 1.23335 1.23335 1.23335 1.23335 1.23335 1.23335 1.30156 1.30156 1.30156
+ 1.30156 1.30156 1.30156 1.37498 1.37498 1.37498 1.37498 1.37498 1.37498
+ 1.44763 1.44763 1.44763 1.44763 1.44763 1.44763 1.51247 1.51247 1.51247
+ 1.51247 1.51247 1.51247 1.12201 1.12201 1.12201 1.12201 1.12201 1.12201
+ 1.12201 1.16082 1.16082 1.16082 1.16082 1.16082 1.16082 1.2117  1.2117
+ 1.2117  1.2117  1.2117  1.2117  1.27124 1.27124 1.27124 1.27124 1.27124
+ 1.27124 1.33501 1.33501 1.33501 1.33501 1.33501 1.33501 1.3976  1.3976
+ 1.3976  1.3976  1.3976  1.3976  1.45265 1.45265 1.45265 1.45265 1.45265
+ 1.45265 1.11367 1.11367 1.11367 1.11367 1.11367 1.11367 1.14784 1.14784
+ 1.14784 1.14784 1.14784 1.14784 1.19257 1.19257 1.19257 1.19257 1.19257
+ 1.19257 1.24476 1.24476 1.24476 1.24476 1.24476 1.24476 1.30042 1.30042
+ 1.30042 1.30042 1.30042 1.30042 1.35467 1.35467 1.35467 1.35467 1.35467
+ 1.35467 1.40174 1.40174 1.40174 1.40174 1.40174 1.40174 1.10583 1.10583
+ 1.10583 1.10583 1.10583 1.10583 1.136   1.136   1.136   1.136   1.136
+ 1.136   1.17543 1.17543 1.17543 1.17543 1.17543 1.17543 1.22133 1.22133
+ 1.22133 1.22133 1.22133 1.22133 1.2701  1.2701  1.2701  1.2701  1.2701
+ 1.2701  1.31733 1.31733 1.31733 1.31733 1.31733 1.31733 1.35783 1.35783
+ 1.35783 1.35783 1.35783 1.35783 1.09842 1.09842 1.09842 1.09842 1.09842
+ 1.09842 1.1251  1.1251  1.1251  1.1251  1.1251  1.1251  1.15992 1.15992
+ 1.15992 1.15992 1.15992 1.15992 1.20038 1.20038 1.20038 1.20038 1.20038
+ 1.20038 1.24322 1.24322 1.24322 1.24322 1.24322 1.24322 1.2845  1.2845
+ 1.2845  1.2845  1.2845  1.2845  1.31952 1.31952 1.31952 1.31952 1.31952
+ 1.31952 1.09135 1.09135 1.09135 1.09135 1.09135 1.09135 1.11495 1.11495
+ 1.11495 1.11495 1.11495 1.11495 1.14574 1.14574 1.14574 1.14574 1.14574
+ 1.14574 1.18144 1.18144 1.18144 1.18144 1.18144 1.18144 1.21915 1.21915
+ 1.21915 1.21915 1.21915 1.21915 1.25532 1.25532 1.25532 1.25532 1.25532
+ 1.25532 1.28574 1.28574 1.28574 1.28574 1.28574 1.28574 1.08457 1.08457
+ 1.08457 1.08457 1.10545 1.10545 1.10545 1.10545 1.10545 1.13266 1.13266
+ 1.13266 1.13266 1.13266 1.16418 1.16418 1.16418 1.16418 1.16418 1.1974
+ 1.1974  1.1974  1.1974  1.1974  1.22915 1.22915 1.22915 1.22915 1.22915
+ 1.25568 1.25568 1.25568 1.25568 1.25568 1.0717  1.0717  1.0717  1.0717
+ 1.0717  1.08796 1.08796 1.08796 1.08796 1.08796 1.10914 1.10914 1.10914
+ 1.10914 1.10914 1.13365 1.13365 1.13365 1.13365 1.13365 1.15942 1.15942
+ 1.15942 1.15942 1.15942 1.18396 1.18396 1.18396 1.18396 1.18396 1.20432
+ 1.20432 1.20432 1.20432 1.20432 1.05953 1.05953 1.05953 1.05953 1.05953
+ 1.07204 1.07204 1.07204 1.07204 1.07204 1.08834 1.08834 1.08834 1.08834
+ 1.08834 1.1072  1.1072  1.1072  1.1072  1.1072  1.12706 1.12706 1.12706
+ 1.12706 1.12706 1.146   1.146   1.146   1.146   1.146   1.16176 1.16176
+ 1.16176 1.16176 1.16176 1.0479  1.0479  1.0479  1.0479  1.0479  1.05729
+ 1.05729 1.05729 1.05729 1.05729 1.06955 1.06955 1.06955 1.06955 1.06955
+ 1.08379 1.08379 1.08379 1.08379 1.08379 1.09885 1.09885 1.09885 1.09885
+ 1.09885 1.11335 1.11335 1.11335 1.11335 1.11335 1.12562 1.12562 1.12562
+ 1.12562 1.12562]
+(560, 2)
+(560,)
+1.2673049464285713
+1.9404
+application called MPI_Abort(MPI_COMM_WORLD, 1) - process 0
+[unset]: write_line error; fd=-1 buf=:cmd=abort exitcode=1
+:
+system msg for write_line failure : Bad file descriptor
+srun: error: notch272: task 1: Exited with exit code 1
+/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/evaluation/fitness_function.py:19: RuntimeWarning: overflow encountered in square
+  return np.sqrt(np.mean(np.square(vector)))
+/uufs/chpc.utah.edu/common/home/u6019587/.venv/bingovenv_v2/lib/python3.7/site-packages/numpy/core/_methods.py:178: RuntimeWarning: overflow encountered in reduce
+  ret = umr_sum(arr, axis, dtype, out, keepdims, where=where)
+Traceback (most recent call last):
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/uufs/chpc.utah.edu/common/home/u6019587/.venv/bingovenv_v2/lib/python3.7/site-packages/mpi4py/__main__.py", line 7, in <module>
+    main()
+  File "/uufs/chpc.utah.edu/common/home/u6019587/.venv/bingovenv_v2/lib/python3.7/site-packages/mpi4py/run.py", line 196, in main
+    run_command_line(args)
+  File "/uufs/chpc.utah.edu/common/home/u6019587/.venv/bingovenv_v2/lib/python3.7/site-packages/mpi4py/run.py", line 47, in run_command_line
+    run_path(sys.argv[0], run_name='__main__')
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 263, in run_path
+    pkg_name=pkg_name, script_name=fname)
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 96, in _run_module_code
+    mod_name, mod_spec, pkg_name, script_name)
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "bingo_evolution.py", line 199, in <module>
+    main(model)
+  File "bingo_evolution.py", line 178, in main
+    execute_generational_steps(model)
+  File "bingo_evolution.py", line 165, in execute_generational_steps
+    checkpoint_base_name='checkpoint_', num_checkpoints=5,stagnation_generations=STAGNATION)
+  File "/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/util/argument_validation.py", line 84, in do_validation
+    return func(*pargs, **kwargs)
+  File "/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/evolutionary_optimizers/evolutionary_optimizer.py", line 143, in evolve_until_convergence
+    self._update_checkpoints(checkpoint_base_name, num_checkpoints)
+  File "/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/evolutionary_optimizers/evolutionary_optimizer.py", line 200, in _update_checkpoints
+    self._remove_stale_checkpoint()
+  File "/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/evolutionary_optimizers/parallel_archipelago.py", line 276, in _remove_stale_checkpoint
+    os.remove(self._previous_checkpoints.pop(0))
+FileNotFoundError: [Errno 2] No such file or directory: 'checkpoint__0.pkl'
+starting
+done
+[1.17842 1.17842 1.17842 1.17842 1.17842 1.17842 1.25871 1.25871 1.25871
+ 1.25871 1.25871 1.36597 1.36597 1.36597 1.36597 1.36597 1.4951  1.4951
+ 1.4951  1.4951  1.4951  1.4951  1.6395  1.6395  1.6395  1.6395  1.6395
+ 1.6395  1.7911  1.7911  1.7911  1.7911  1.7911  1.9404  1.9404  1.9404
+ 1.9404  1.9404  1.9404  1.16406 1.16406 1.16406 1.16406 1.16406 1.16406
+ 1.16406 1.23206 1.23206 1.23206 1.23206 1.23206 1.23206 1.32226 1.32226
+ 1.32226 1.32226 1.32226 1.32226 1.42963 1.42963 1.42963 1.42963 1.42963
+ 1.42963 1.54772 1.54772 1.54772 1.54772 1.54772 1.54772 1.66866 1.66866
+ 1.66866 1.66866 1.66866 1.66866 1.78312 1.78312 1.78312 1.78312 1.78312
+ 1.78312 1.15172 1.15172 1.15172 1.15172 1.15172 1.15172 1.15172 1.21015
+ 1.21015 1.21015 1.21015 1.21015 1.21015 1.28732 1.28732 1.28732 1.28732
+ 1.28732 1.28732 1.37863 1.37863 1.37863 1.37863 1.37863 1.37863 1.47813
+ 1.47813 1.47813 1.47813 1.47813 1.47813 1.57856 1.57856 1.57856 1.57856
+ 1.57856 1.57856 1.67134 1.67134 1.67134 1.67134 1.67134 1.67134 1.14083
+ 1.14083 1.14083 1.14083 1.14083 1.14083 1.14083 1.19149 1.19149 1.19149
+ 1.19149 1.19149 1.19149 1.25822 1.25822 1.25822 1.25822 1.25822 1.25822
+ 1.33682 1.33682 1.33682 1.33682 1.33682 1.33682 1.4219  1.4219  1.4219
+ 1.4219  1.4219  1.4219  1.50687 1.50687 1.50687 1.50687 1.50687 1.50687
+ 1.58392 1.58392 1.58392 1.58392 1.58392 1.58392 1.13101 1.13101 1.13101
+ 1.13101 1.13101 1.13101 1.17524 1.17524 1.17524 1.17524 1.17524 1.17524
+ 1.23335 1.23335 1.23335 1.23335 1.23335 1.23335 1.30156 1.30156 1.30156
+ 1.30156 1.30156 1.30156 1.37498 1.37498 1.37498 1.37498 1.37498 1.37498
+ 1.44763 1.44763 1.44763 1.44763 1.44763 1.44763 1.51247 1.51247 1.51247
+ 1.51247 1.51247 1.51247 1.12201 1.12201 1.12201 1.12201 1.12201 1.12201
+ 1.12201 1.16082 1.16082 1.16082 1.16082 1.16082 1.16082 1.2117  1.2117
+ 1.2117  1.2117  1.2117  1.2117  1.27124 1.27124 1.27124 1.27124 1.27124
+ 1.27124 1.33501 1.33501 1.33501 1.33501 1.33501 1.33501 1.3976  1.3976
+ 1.3976  1.3976  1.3976  1.3976  1.45265 1.45265 1.45265 1.45265 1.45265
+ 1.45265 1.11367 1.11367 1.11367 1.11367 1.11367 1.11367 1.14784 1.14784
+ 1.14784 1.14784 1.14784 1.14784 1.19257 1.19257 1.19257 1.19257 1.19257
+ 1.19257 1.24476 1.24476 1.24476 1.24476 1.24476 1.24476 1.30042 1.30042
+ 1.30042 1.30042 1.30042 1.30042 1.35467 1.35467 1.35467 1.35467 1.35467
+ 1.35467 1.40174 1.40174 1.40174 1.40174 1.40174 1.40174 1.10583 1.10583
+ 1.10583 1.10583 1.10583 1.10583 1.136   1.136   1.136   1.136   1.136
+ 1.136   1.17543 1.17543 1.17543 1.17543 1.17543 1.17543 1.22133 1.22133
+ 1.22133 1.22133 1.22133 1.22133 1.2701  1.2701  1.2701  1.2701  1.2701
+ 1.2701  1.31733 1.31733 1.31733 1.31733 1.31733 1.31733 1.35783 1.35783
+ 1.35783 1.35783 1.35783 1.35783 1.09842 1.09842 1.09842 1.09842 1.09842
+ 1.09842 1.1251  1.1251  1.1251  1.1251  1.1251  1.1251  1.15992 1.15992
+ 1.15992 1.15992 1.15992 1.15992 1.20038 1.20038 1.20038 1.20038 1.20038
+ 1.20038 1.24322 1.24322 1.24322 1.24322 1.24322 1.24322 1.2845  1.2845
+ 1.2845  1.2845  1.2845  1.2845  1.31952 1.31952 1.31952 1.31952 1.31952
+ 1.31952 1.09135 1.09135 1.09135 1.09135 1.09135 1.09135 1.11495 1.11495
+ 1.11495 1.11495 1.11495 1.11495 1.14574 1.14574 1.14574 1.14574 1.14574
+ 1.14574 1.18144 1.18144 1.18144 1.18144 1.18144 1.18144 1.21915 1.21915
+ 1.21915 1.21915 1.21915 1.21915 1.25532 1.25532 1.25532 1.25532 1.25532
+ 1.25532 1.28574 1.28574 1.28574 1.28574 1.28574 1.28574 1.08457 1.08457
+ 1.08457 1.08457 1.10545 1.10545 1.10545 1.10545 1.10545 1.13266 1.13266
+ 1.13266 1.13266 1.13266 1.16418 1.16418 1.16418 1.16418 1.16418 1.1974
+ 1.1974  1.1974  1.1974  1.1974  1.22915 1.22915 1.22915 1.22915 1.22915
+ 1.25568 1.25568 1.25568 1.25568 1.25568 1.0717  1.0717  1.0717  1.0717
+ 1.0717  1.08796 1.08796 1.08796 1.08796 1.08796 1.10914 1.10914 1.10914
+ 1.10914 1.10914 1.13365 1.13365 1.13365 1.13365 1.13365 1.15942 1.15942
+ 1.15942 1.15942 1.15942 1.18396 1.18396 1.18396 1.18396 1.18396 1.20432
+ 1.20432 1.20432 1.20432 1.20432 1.05953 1.05953 1.05953 1.05953 1.05953
+ 1.07204 1.07204 1.07204 1.07204 1.07204 1.08834 1.08834 1.08834 1.08834
+ 1.08834 1.1072  1.1072  1.1072  1.1072  1.1072  1.12706 1.12706 1.12706
+ 1.12706 1.12706 1.146   1.146   1.146   1.146   1.146   1.16176 1.16176
+ 1.16176 1.16176 1.16176 1.0479  1.0479  1.0479  1.0479  1.0479  1.05729
+ 1.05729 1.05729 1.05729 1.05729 1.06955 1.06955 1.06955 1.06955 1.06955
+ 1.08379 1.08379 1.08379 1.08379 1.08379 1.09885 1.09885 1.09885 1.09885
+ 1.09885 1.11335 1.11335 1.11335 1.11335 1.11335 1.12562 1.12562 1.12562
+ 1.12562 1.12562]
+(560, 2)
+(560,)
+1.2673049464285713
+1.9404
+application called MPI_Abort(MPI_COMM_WORLD, 1) - process 0
+[unset]: write_line error; fd=-1 buf=:cmd=abort exitcode=1
+:
+system msg for write_line failure : Bad file descriptor
+srun: error: notch272: task 3: Exited with exit code 1
+starting
+done
+[1.17842 1.17842 1.17842 1.17842 1.17842 1.17842 1.25871 1.25871 1.25871
+ 1.25871 1.25871 1.36597 1.36597 1.36597 1.36597 1.36597 1.4951  1.4951
+ 1.4951  1.4951  1.4951  1.4951  1.6395  1.6395  1.6395  1.6395  1.6395
+ 1.6395  1.7911  1.7911  1.7911  1.7911  1.7911  1.9404  1.9404  1.9404
+ 1.9404  1.9404  1.9404  1.16406 1.16406 1.16406 1.16406 1.16406 1.16406
+ 1.16406 1.23206 1.23206 1.23206 1.23206 1.23206 1.23206 1.32226 1.32226
+ 1.32226 1.32226 1.32226 1.32226 1.42963 1.42963 1.42963 1.42963 1.42963
+ 1.42963 1.54772 1.54772 1.54772 1.54772 1.54772 1.54772 1.66866 1.66866
+ 1.66866 1.66866 1.66866 1.66866 1.78312 1.78312 1.78312 1.78312 1.78312
+ 1.78312 1.15172 1.15172 1.15172 1.15172 1.15172 1.15172 1.15172 1.21015
+ 1.21015 1.21015 1.21015 1.21015 1.21015 1.28732 1.28732 1.28732 1.28732
+ 1.28732 1.28732 1.37863 1.37863 1.37863 1.37863 1.37863 1.37863 1.47813
+ 1.47813 1.47813 1.47813 1.47813 1.47813 1.57856 1.57856 1.57856 1.57856
+ 1.57856 1.57856 1.67134 1.67134 1.67134 1.67134 1.67134 1.67134 1.14083
+ 1.14083 1.14083 1.14083 1.14083 1.14083 1.14083 1.19149 1.19149 1.19149
+ 1.19149 1.19149 1.19149 1.25822 1.25822 1.25822 1.25822 1.25822 1.25822
+ 1.33682 1.33682 1.33682 1.33682 1.33682 1.33682 1.4219  1.4219  1.4219
+ 1.4219  1.4219  1.4219  1.50687 1.50687 1.50687 1.50687 1.50687 1.50687
+ 1.58392 1.58392 1.58392 1.58392 1.58392 1.58392 1.13101 1.13101 1.13101
+ 1.13101 1.13101 1.13101 1.17524 1.17524 1.17524 1.17524 1.17524 1.17524
+ 1.23335 1.23335 1.23335 1.23335 1.23335 1.23335 1.30156 1.30156 1.30156
+ 1.30156 1.30156 1.30156 1.37498 1.37498 1.37498 1.37498 1.37498 1.37498
+ 1.44763 1.44763 1.44763 1.44763 1.44763 1.44763 1.51247 1.51247 1.51247
+ 1.51247 1.51247 1.51247 1.12201 1.12201 1.12201 1.12201 1.12201 1.12201
+ 1.12201 1.16082 1.16082 1.16082 1.16082 1.16082 1.16082 1.2117  1.2117
+ 1.2117  1.2117  1.2117  1.2117  1.27124 1.27124 1.27124 1.27124 1.27124
+ 1.27124 1.33501 1.33501 1.33501 1.33501 1.33501 1.33501 1.3976  1.3976
+ 1.3976  1.3976  1.3976  1.3976  1.45265 1.45265 1.45265 1.45265 1.45265
+ 1.45265 1.11367 1.11367 1.11367 1.11367 1.11367 1.11367 1.14784 1.14784
+ 1.14784 1.14784 1.14784 1.14784 1.19257 1.19257 1.19257 1.19257 1.19257
+ 1.19257 1.24476 1.24476 1.24476 1.24476 1.24476 1.24476 1.30042 1.30042
+ 1.30042 1.30042 1.30042 1.30042 1.35467 1.35467 1.35467 1.35467 1.35467
+ 1.35467 1.40174 1.40174 1.40174 1.40174 1.40174 1.40174 1.10583 1.10583
+ 1.10583 1.10583 1.10583 1.10583 1.136   1.136   1.136   1.136   1.136
+ 1.136   1.17543 1.17543 1.17543 1.17543 1.17543 1.17543 1.22133 1.22133
+ 1.22133 1.22133 1.22133 1.22133 1.2701  1.2701  1.2701  1.2701  1.2701
+ 1.2701  1.31733 1.31733 1.31733 1.31733 1.31733 1.31733 1.35783 1.35783
+ 1.35783 1.35783 1.35783 1.35783 1.09842 1.09842 1.09842 1.09842 1.09842
+ 1.09842 1.1251  1.1251  1.1251  1.1251  1.1251  1.1251  1.15992 1.15992
+ 1.15992 1.15992 1.15992 1.15992 1.20038 1.20038 1.20038 1.20038 1.20038
+ 1.20038 1.24322 1.24322 1.24322 1.24322 1.24322 1.24322 1.2845  1.2845
+ 1.2845  1.2845  1.2845  1.2845  1.31952 1.31952 1.31952 1.31952 1.31952
+ 1.31952 1.09135 1.09135 1.09135 1.09135 1.09135 1.09135 1.11495 1.11495
+ 1.11495 1.11495 1.11495 1.11495 1.14574 1.14574 1.14574 1.14574 1.14574
+ 1.14574 1.18144 1.18144 1.18144 1.18144 1.18144 1.18144 1.21915 1.21915
+ 1.21915 1.21915 1.21915 1.21915 1.25532 1.25532 1.25532 1.25532 1.25532
+ 1.25532 1.28574 1.28574 1.28574 1.28574 1.28574 1.28574 1.08457 1.08457
+ 1.08457 1.08457 1.10545 1.10545 1.10545 1.10545 1.10545 1.13266 1.13266
+ 1.13266 1.13266 1.13266 1.16418 1.16418 1.16418 1.16418 1.16418 1.1974
+ 1.1974  1.1974  1.1974  1.1974  1.22915 1.22915 1.22915 1.22915 1.22915
+ 1.25568 1.25568 1.25568 1.25568 1.25568 1.0717  1.0717  1.0717  1.0717
+ 1.0717  1.08796 1.08796 1.08796 1.08796 1.08796 1.10914 1.10914 1.10914
+ 1.10914 1.10914 1.13365 1.13365 1.13365 1.13365 1.13365 1.15942 1.15942
+ 1.15942 1.15942 1.15942 1.18396 1.18396 1.18396 1.18396 1.18396 1.20432
+ 1.20432 1.20432 1.20432 1.20432 1.05953 1.05953 1.05953 1.05953 1.05953
+ 1.07204 1.07204 1.07204 1.07204 1.07204 1.08834 1.08834 1.08834 1.08834
+/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/evaluation/fitness_function.py:19: RuntimeWarning: overflow encountered in square
+  return np.sqrt(np.mean(np.square(vector)))
+/uufs/chpc.utah.edu/common/home/u6019587/.venv/bingovenv_v2/lib/python3.7/site-packages/numpy/core/_methods.py:178: RuntimeWarning: overflow encountered in reduce
+  ret = umr_sum(arr, axis, dtype, out, keepdims, where=where)
+Traceback (most recent call last):
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/uufs/chpc.utah.edu/common/home/u6019587/.venv/bingovenv_v2/lib/python3.7/site-packages/mpi4py/__main__.py", line 7, in <module>
+    main()
+  File "/uufs/chpc.utah.edu/common/home/u6019587/.venv/bingovenv_v2/lib/python3.7/site-packages/mpi4py/run.py", line 196, in main
+    run_command_line(args)
+  File "/uufs/chpc.utah.edu/common/home/u6019587/.venv/bingovenv_v2/lib/python3.7/site-packages/mpi4py/run.py", line 47, in run_command_line
+    run_path(sys.argv[0], run_name='__main__')
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 263, in run_path
+    pkg_name=pkg_name, script_name=fname)
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 96, in _run_module_code
+    mod_name, mod_spec, pkg_name, script_name)
+  File "/uufs/chpc.utah.edu/sys/installdir/python/3.7.3/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "bingo_evolution.py", line 199, in <module>
+    main(model)
+  File "bingo_evolution.py", line 178, in main
+    execute_generational_steps(model)
+  File "bingo_evolution.py", line 165, in execute_generational_steps
+    checkpoint_base_name='checkpoint_', num_checkpoints=5,stagnation_generations=STAGNATION)
+  File "/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/util/argument_validation.py", line 84, in do_validation
+    return func(*pargs, **kwargs)
+  File "/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/evolutionary_optimizers/evolutionary_optimizer.py", line 143, in evolve_until_convergence
+    self._update_checkpoints(checkpoint_base_name, num_checkpoints)
+  File "/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/evolutionary_optimizers/evolutionary_optimizer.py", line 200, in _update_checkpoints
+    self._remove_stale_checkpoint()
+  File "/uufs/chpc.utah.edu/common/home/u1164746/bingo/bingo/evolutionary_optimizers/parallel_archipelago.py", line 276, in _remove_stale_checkpoint
+    os.remove(self._previous_checkpoints.pop(0))
+FileNotFoundError: [Errno 2] No such file or directory: 'checkpoint__0.pkl'
+ 1.08834 1.1072  1.1072  1.1072  1.1072  1.1072  1.12706 1.12706 1.12706
+ 1.12706 1.12706 1.146   1.146   1.146   1.146   1.146   1.16176 1.16176
+ 1.16176 1.16176 1.16176 1.0479  1.0479  1.0479  1.0479  1.0479  1.05729
+ 1.05729 1.05729 1.05729 1.05729 1.06955 1.06955 1.06955 1.06955 1.06955
+ 1.08379 1.08379 1.08379 1.08379 1.08379 1.09885 1.09885 1.09885 1.09885
+ 1.09885 1.11335 1.11335 1.11335 1.11335 1.11335 1.12562 1.12562 1.12562
+ 1.12562 1.12562]
+(560, 2)
+(560,)
+1.2673049464285713
+1.9404
+application called MPI_Abort(MPI_COMM_WORLD, 1) - process 0
+[unset]: write_line error; fd=-1 buf=:cmd=abort exitcode=1
+:
+system msg for write_line failure : Bad file descriptor
+srun: error: notch272: task 7: Exited with exit code 1

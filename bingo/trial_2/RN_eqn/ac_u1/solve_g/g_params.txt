@@ -1,0 +1,4 @@
+checkpoint = ../checkpoint__337000.pkl
+model = 1
+data file = ../../../data_sets/RN_eqn.csv
+a/c greater than 1 = 0
